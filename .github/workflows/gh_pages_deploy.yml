@@ -28,9 +28,15 @@ jobs:
       - name: Build Web (WASM)
         run: flutter build web --wasm --base-href /wiseworkout/
 
+      # Étape de secours pour les serveurs comme GitHub Pages qui gèrent mal le WASM pur
+      - name: Ensure correct routing for GitHub Pages
+        run: |
+          cp build/web/index.html build/web/404.html
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           token: ${{ secrets.SECRET_FOR_DEPLOY_WISEWORKOUT }}
           branch: gh-pages
           folder: build/web
+          clean: true # Force le nettoyage pour éviter les conflits de fichiers
