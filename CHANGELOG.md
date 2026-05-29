@@ -1,5 +1,16 @@
 # CHANGELOG wiseworkout
 
+## 🚀 0.2.0 - 29/05/2026
+
+### Added
+- Imported the full theme folder (`lib/core/themes`) from `sekuence` and refactored all package import pathways to match `wiseworkout`.
+
+### Changed
+- N/A
+
+### Fixed
+- Resolved a pre-existing linter warning in the default template `lib/main.dart` regarding parameter ordering (`always_put_required_named_parameters_first`).
+
 ## 🚀 0.1.0 - 29/05/2026
 
 ### Added
