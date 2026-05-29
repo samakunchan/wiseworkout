@@ -6,6 +6,9 @@ on:
       - 'feat/**'
       - 'fix/**'
 
+permissions:
+  contents: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -28,15 +31,16 @@ jobs:
       - name: Build Web (WASM)
         run: flutter build web --wasm --base-href /wiseworkout/
 
-      # Étape de secours pour les serveurs comme GitHub Pages qui gèrent mal le WASM pur
+      # Étape de secours pour les serveurs comme GitHub Pages qui gèrent mal le WASM pur et Jekyll
       - name: Ensure correct routing for GitHub Pages
         run: |
           cp build/web/index.html build/web/404.html
+          touch build/web/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          token: ${{ secrets.SECRET_FOR_DEPLOY_WISEWORKOUT }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
           folder: build/web
           clean: true # Force le nettoyage pour éviter les conflits de fichiers
