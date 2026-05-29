@@ -1,8 +1,19 @@
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:wiseworkout/core/themes/theme.dart';
 
 void main() {
-  runApp(const MyApp());
+  if (kIsWeb) {
+    runApp(
+      DevicePreview(
+        enabled: kIsWeb,
+        builder: (BuildContext context) => const MyApp(),
+      ),
+    );
+  } else {
+    runApp(const MyApp());
+  }
 }
 
 class MyApp extends StatelessWidget {
