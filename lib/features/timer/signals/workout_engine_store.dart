@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:drift/drift.dart';
+
 import 'package:signals/signals.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
 import 'package:wiseworkout/features/database/services/database_service.dart';
@@ -120,9 +120,7 @@ class WorkoutEngineStore {
     _stopTimer();
 
     // Automatically save history if we were in the middle of a session and actually made some progress
-    if (status.value != TimerStatus.initial &&
-        status.value != TimerStatus.completed &&
-        currentTimeCompleted.value > 0) {
+    if (status.value != TimerStatus.initial && status.value != TimerStatus.completed && currentTimeCompleted.value > 0) {
       await _saveHistory(isFinished: false);
     }
 
@@ -217,8 +215,7 @@ class WorkoutEngineStore {
   }
 
   Future<void> _saveHistory({required bool isFinished}) async {
-    final double plannedTime = (_settingsStore.totalSets.value *
-            (_settingsStore.workTime.value + _settingsStore.restTime.value))
+    final double plannedTime = (_settingsStore.totalSets.value * (_settingsStore.workTime.value + _settingsStore.restTime.value))
         .toDouble();
 
     await kGetIt<AppDatabase>().createHistory(
