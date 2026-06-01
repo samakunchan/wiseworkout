@@ -1,5 +1,18 @@
 # CHANGELOG wiseworkout
 
+## 🚀 0.3.0 - 01/06/2026
+
+### Added
+- Configured multi-language localization setup for five languages: English (`app_en.arb`), French (`app_fr.arb`), Spanish (`app_es.arb`), Chinese (`app_zh.arb`), and German (`app_de.arb` as placeholder for custom `zr` locale).
+- Created a custom `BuildContextExtension` inside `lib/core/extensions/context_extension.dart` exposing both `context.localization` and `context.localizations` to enable clean and convenient translation access.
+- Created `l10n.yaml` to configure the automated i18n class generator.
+
+### Changed
+- N/A
+
+### Fixed
+- N/A
+
 ## 🚀 0.2.0 - 29/05/2026
 
 ### Added
