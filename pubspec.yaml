@@ -104,6 +104,13 @@ dev_dependencies:
   # Mocking
   mockito: ^5.4.4
 
+dependency_overrides:
+  path_provider_android: 2.2.22
+  drift: 2.29.0
+  drift_dev: 2.29.0
+  sqlite3: 2.9.4
+  sqlite3_flutter_libs: 0.5.42
+
 flutter:
   uses-material-design: true
   generate: true
