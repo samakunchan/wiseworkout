@@ -96,7 +96,7 @@ class WorkoutEngineStore {
     _playSound('start.mp3');
 
     if (status.value == TimerStatus.completed) {
-      reset();
+      await reset();
     }
 
     // Set the status to working or resting depending on the active interval
@@ -144,17 +144,13 @@ class WorkoutEngineStore {
       switch (status.value) {
         case TimerStatus.working:
           _handleWorkTick();
-          break;
         case TimerStatus.resting:
           _handleRestTick();
-          break;
         case TimerStatus.paused:
           _handlePauseTick();
-          break;
         case TimerStatus.initial:
         case TimerStatus.completed:
           _stopTimer();
-          break;
       }
     });
   }
@@ -199,8 +195,8 @@ class WorkoutEngineStore {
     _stopTimer();
     status.value = TimerStatus.completed;
     _playSound('finish.mp3');
-    _saveHistory(isFinished: true);
-    WakelockPlus.disable();
+    unawaited(_saveHistory(isFinished: true));
+    unawaited(WakelockPlus.disable());
   }
 
   void _stopTimer() {
@@ -210,7 +206,7 @@ class WorkoutEngineStore {
 
   void _playSound(String asset) {
     if (_settingsStore.timerConf.value.soundSelected) {
-      kGetIt<SoundService>().playSound(asset);
+      unawaited(kGetIt<SoundService>().playSound(asset));
     }
   }
 
