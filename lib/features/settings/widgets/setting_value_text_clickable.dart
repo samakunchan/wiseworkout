@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wiseworkout/features/di/services/service_locator.dart';
 import 'package:wiseworkout/features/settings/screens/timer_set_up_screen.dart';
-import 'package:wiseworkout/features/timer/signals/workout_settings_store.dart';
+import 'package:wiseworkout/features/settings/signals/workout_settings_store.dart';
 
 class SettingValueTextClickable extends StatelessWidget {
   const SettingValueTextClickable({required this.text, this.isFirst = true, super.key});

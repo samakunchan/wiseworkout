@@ -7,9 +7,9 @@ import 'package:wiseworkout/core/extensions/context_extension.dart';
 import 'package:wiseworkout/features/cache/services/cache_service.dart';
 import 'package:wiseworkout/features/di/services/service_locator.dart';
 import 'package:wiseworkout/features/helpers.dart';
+import 'package:wiseworkout/features/settings/signals/workout_settings_store.dart';
 import 'package:wiseworkout/features/timer/models/timer_configuration_model.dart';
 import 'package:wiseworkout/features/timer/signals/workout_engine_store.dart';
-import 'package:wiseworkout/features/timer/signals/workout_settings_store.dart';
 
 class SettingSaveButton extends StatelessWidget {
   const SettingSaveButton({super.key});

@@ -4,9 +4,9 @@ import 'package:signals/signals.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
 import 'package:wiseworkout/features/database/services/database_service.dart';
 import 'package:wiseworkout/features/di/services/service_locator.dart';
+import 'package:wiseworkout/features/settings/signals/workout_settings_store.dart';
 import 'package:wiseworkout/features/sound/services/sound_service.dart';
 import 'package:wiseworkout/features/timer/enums/enums.dart';
-import 'package:wiseworkout/features/timer/signals/workout_settings_store.dart';
 
 /// Represents the status transitions of the running workout timer.
 

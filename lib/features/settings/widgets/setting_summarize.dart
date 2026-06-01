@@ -3,8 +3,8 @@ import 'package:signals/signals_flutter.dart';
 import 'package:wiseworkout/core/extensions/context_extension.dart';
 import 'package:wiseworkout/core/extensions/integer_extension.dart';
 import 'package:wiseworkout/features/di/services/service_locator.dart';
+import 'package:wiseworkout/features/settings/signals/workout_settings_store.dart';
 import 'package:wiseworkout/features/settings/widgets/setting_label_text.dart';
-import 'package:wiseworkout/features/timer/signals/workout_settings_store.dart';
 
 class SettingSummarize extends StatelessWidget {
   const SettingSummarize({super.key});
