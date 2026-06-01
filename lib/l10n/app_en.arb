@@ -1,0 +1,413 @@
+{
+  "titleSettingScreen": "Settings",
+  "@titleSettingScreen": {
+    "description": "Text for the title of the setting screen"
+  },
+  "titleMainScreen": "WiseWorkout",
+  "@titleMainScreen": {
+    "description": "Text for the title of the main screen"
+  },
+  "titleMaintenanceScreen": "Maintenance",
+  "@titleMaintenanceScreen": {
+    "description": "Text for the title of the maintenance screen"
+  },
+  "titleHistoryScreen": "History",
+  "@titleHistoryScreen": {
+    "description": "Text for the title of the history screen"
+  },
+  "navigateToSettingScreen": "Go to settings",
+  "@navigateToSettingScreen": {
+    "description": "Text for the button to navigate to the settings screen"
+  },
+  "navigateToMaintenanceScreen": "Go to maintenance",
+  "@navigateToMaintenanceScreen": {
+    "description": "Text for the button to navigate to the maintenance screen"
+  },
+  "navigateToHistoryScreen": "Go to history",
+  "@navigateToHistoryScreen": {
+    "description": "Text for the button to navigate to the history screen"
+  },
+  "navigateToMainScreen": "Go to main",
+  "@navigateToMainScreen": {
+    "description": "Text for the button to navigate to main screen"
+  },
+  "buttonLoadPresets": "Load presets",
+  "@buttonLoadPresets": {
+    "description": "Text for the button to load presets"
+  },
+  "buttonApplyConfiguration": "Apply configuration",
+  "@buttonApplyConfiguration": {
+    "description": "Text for the button to apply configuration"
+  },
+  "buttonResetDatabase": "Reset database",
+  "@buttonResetDatabase": {
+    "description": "Text for the button to reset database"
+  },
+  "buttonChoose": "Choose",
+  "@buttonChoose": {
+    "description": "Text for the button to choose"
+  },
+  "buttonCancel": "Cancel",
+  "@buttonCancel": {
+    "description": "Text for the button to cancel"
+  },
+  "buttonShowHistory": "Show history",
+  "@buttonShowHistory": {
+    "description": "Text for the button to show history"
+  },
+  "toastTextConfigurationSaved": "Configuration saved",
+  "@toastTextConfigurationSaved": {
+    "description": "Text for the success toast message : configuration saved"
+  },
+  "toastTextResetedDatabase": "Database reseted",
+  "@toastTextResetedDatabase": {
+    "description": "Text for the success toast message: reset database"
+  },
+  "titleSettingDescription": "Manage your settings",
+  "@titleSettingDescription": {
+    "description": "Text for the title of the setting description"
+  },
+  "labelSettingWorkout": "Workout",
+  "@labelSettingWorkout": {
+    "description": "Text for the label of the workout setting"
+  },
+  "labelSettingRest": "Rest",
+  "@labelSettingRest": {
+    "description": "Text for the label of the rest setting"
+  },
+  "labelSettingSets": "Sets",
+  "@labelSettingSets": {
+    "description": "Text for the label of the sets setting"
+  },
+  "labelSettingSummarize": "Summarize",
+  "@labelSettingSummarize": {
+    "description": "Text for the label of the summarize setting"
+  },
+  "labelSettingOption": "Option",
+  "@labelSettingOption": {
+    "description": "Text for the label of the option setting"
+  },
+  "labelSettingUseCircularTimer": "Use circular timer",
+  "@labelSettingUseCircularTimer": {
+    "description": "Text for the label of the use circular timer setting"
+  },
+  "labelSettingSoundActive": "Sound active",
+  "@labelSettingSoundActive": {
+    "description": "Text for the label of the sound active setting"
+  },
+  "textCountTime": "{count, plural, =0{no time} =1{1 time} other{{count} times}}",
+  "@textCountTime": {
+    "description": "Text for the count time",
+    "placeholders": {
+      "count": {
+        "type": "num",
+        "format": "compact"
+      }
+    }
+  },
+  "textSummarizeEndText": " for the session.",
+  "@textSummarizeEndText": {
+    "description": "Text for the summarize end text"
+  },
+  "drawerMonthlySummaryText": "Monthly summary",
+  "@drawerMonthlySummaryText": {
+    "description": "Text for the monthly summary drawer item"
+  },
+  "drawerAboutUsText": "About us",
+  "@drawerAboutUsText": {
+    "description": "Text for the about us drawer item"
+  },
+  "drawerVersionInfoText": "Version info",
+  "@drawerVersionInfoText": {
+    "description": "Text for the version info drawer"
+  },
+  "drawerAuthorizationText": "Authorizations",
+  "@drawerAuthorizationText": {
+    "description": "Text for the authorization drawer"
+  },
+  "drawerFeedbackText": "Feedback",
+  "@drawerFeedbackText": {
+    "description": "Text for the feedback drawer item"
+  },
+  "drawerRateOnStore": "Rate on the store",
+  "@drawerRateOnStore": {
+    "description": "Text for the rate on the store drawer item"
+  },
+  "drawerPrivacyPolicy": "Privacy policy",
+  "@drawerPrivacyPolicy": {
+    "description": "Text for the privacy policy drawer item"
+  },
+  "drawerTermsOfService": "Terms of service",
+  "@drawerTermsOfService": {
+    "description": "Text for the terms of service drawer item"
+  },
+  "drawerReportABug": "Report a bug",
+  "@drawerReportABug": {
+    "description": "Text for the report a bug"
+  },
+  "timerIsAlreadyRunning": "Timer is already running",
+  "@timerIsAlreadyRunning": {
+    "description": "Text for the timer is already running"
+  },
+  "buttonKeepIt": "Keep it",
+  "@buttonKeepIt": {
+    "description": "Text for the button to keep it"
+  },
+  "buttonApplyChanges": "Apply changes",
+  "@buttonApplyChanges": {
+    "description": "Text for the button to apply changes"
+  },
+  "keyNoTranslationAvailable": "No translation available",
+  "@keyNoTranslationAvailable": {
+    "description": "Text for the no translation available"
+  },
+  "keyWarmUpText": "Warm up",
+  "@keyWarmUpText": {
+    "description": "Text for the warm up"
+  },
+  "keyCoreText": "Core",
+  "@keyCoreText": {
+    "description": "Text for the core"
+  },
+  "keyLearningText": "Learning",
+  "@keyLearningText": {
+    "description": "Text for the key learning"
+  },
+  "keyWorkingToMyJob": "Working to my job",
+  "@keyWorkingToMyJob": {
+    "description": "Text for the key working to my job"
+  },
+  "keyMail": "Mail",
+  "@keyMail": {
+    "description": "Text for the key mail"
+  },
+  "keySearchJob": "Search job",
+  "@keySearchJob": {
+    "description": "Text for the key search job"
+  },
+  "keyCookingSteak": "Cooking steak",
+  "@keyCookingSteak": {
+    "description": "Text for the key cooking steak"
+  },
+  "keyCookingNuggets": "Cooking nuggets",
+  "@keyCookingNuggets": {
+    "description": "Text for the key cooking nuggets"
+  },
+  "textToday": "Today",
+  "@textToday": {
+    "description": "Text for the today"
+  },
+  "textYesterday": "Yesterday",
+  "@textYesterday": {
+    "description": "Text for the yesterday"
+  },
+  "textDateTime": "Date",
+  "@textDateTime": {
+    "description": "Text for the date"
+  },
+  "textPlannedTime": "Planned",
+  "@textPlannedTime": {
+    "description": "Text for the planned time"
+  },
+  "textBreakTime": "Break",
+  "@textBreakTime": {
+    "description": "Text for the break time"
+  },
+  "textTime": "Time",
+  "@textTime": {
+    "description": "Text for the time"
+  },
+  "textWorkTime": "Work",
+  "@textWorkTime": {
+    "description": "Text for the work time"
+  },
+  "textRestTime": "Rest",
+  "@textRestTime": {
+    "description": "Text for the rest time"
+  },
+  "textFinishedTime": "Finished",
+  "@textFinishedTime": {
+    "description": "Text for the finished time"
+  },
+  "textSessionToday": "Session today",
+  "@textSessionToday": {
+    "description": "Text for the session today"
+  },
+  "textTotalTime": "Total time",
+  "@textTotalTime": {
+    "description": "Text for the total time"
+  },
+  "buttonReturnToTimer": "Return to timer",
+  "@buttonReturnToTimer": {
+    "description": "Button text for the return to timer"
+  },
+  "historyDescription": "Review your completed workout sessions.",
+  "@historyDescription": {
+    "description": "Text for the history description"
+  },
+  "textSummaryMonthly": "Monthly summary",
+  "@textSummaryMonthly": {
+    "description": "Text for the monthly summary"
+  },
+  "textTotalSessions": "Total sessions",
+  "@textTotalSessions": {
+    "description": "Text for the total sessions"
+  },
+  "textAverageSession": "Average session",
+  "@textAverageSession": {
+    "description": "Text for the average session"
+  },
+  "textDailySessions": "Daily sessions",
+  "@textDailySessions": {
+    "description": "Text for the daily sessions"
+  },
+  "textActivityBreakdown": "Activity breakdown",
+  "@textActivityBreakdown": {
+    "description": "Text for the activity breakdown"
+  },
+  "textMostProductiveDay": "Most productive day",
+  "@textMostProductiveDay": {
+    "description": "Text for the most productive day"
+  },
+  "textLongestStreak": "Longest streak",
+  "@textLongestStreak": {
+    "description": "Text for the longest streak"
+  },
+  "textLongestStreakDescription": "Daily focus goal",
+  "@textLongestStreakDescription": {
+    "description": "Text for the longest streak description"
+  },
+  "textTaskCompleted": "Task completed",
+  "@textTaskCompleted": {
+    "description": "Text for the task completed"
+  },
+  "textBreaksTaken": "Breaks taken",
+  "@textBreaksTaken": {
+    "description": "Text for the breaks taken"
+  },
+  "textBreaksTakenDescription": "Total short and long breaks",
+  "@textBreaksTakenDescription": {
+    "description": "Text for the task completed description"
+  },
+  "textNSession": "{count, plural, =0{no session} =1{1 session} other{{count} sessions}}",
+  "@textNSession": {
+    "description": "Text for the n session",
+    "placeholders": {
+      "count": {
+        "type": "num",
+        "format": "compact"
+      }
+    }
+  },
+  "textNDay": "{count, plural, =0{no day} =1{1 day} other{{count} days}}",
+  "@textNDay": {
+    "description": "Text for the n day",
+    "placeholders": {
+      "count": {
+        "type": "num",
+        "format": "compact"
+      }
+    }
+  },
+  "textShortMonday": "Mon",
+  "@textShortMonday": {
+    "description": "Text for the short monday"
+  },
+  "textShortTuesday": "Tue",
+  "@textShortTuesday": {
+    "description": "Text for the short tuesday"
+  },
+  "textShortWednesday": "Wed",
+  "@textShortWednesday": {
+    "description": "Text for the short wednesday"
+  },
+  "textShortThursday": "Thr",
+  "@textShortThursday": {
+    "description": "Text for the short thursday"
+  },
+  "textShortFriday": "Fri",
+  "@textShortFriday": {
+    "description": "Text for the short friday"
+  },
+  "textShortSaturday": "Sat",
+  "@textShortSaturday": {
+    "description": "Text for the short saturday"
+  },
+  "textShortSunday": "Sun",
+  "@textShortSunday": {
+    "description": "Text for the short sunday"
+  },
+  "error404Description": "Page not found",
+  "@error404Description": {
+    "description": "Text for the error"
+  },
+  "languageSelected": "Language - {language, select, en{English} fr{French} other{English}}",
+  "@languageSelected": {
+    "description": "Text for the language selected",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "ofText": "of",
+  "@ofText": {
+    "description": "Text for the 'of'"
+  },
+  "sessionCompletedText": "Session completed",
+  "@sessionCompletedText": {
+    "description": "Text for the session completed"
+  },
+  "welcomeScreenTitlePrefix": "You know your ",
+  "@welcomeScreenTitlePrefix": {
+    "description": "First part of the welcome screen title"
+  },
+  "welcomeScreenTitleHighlight": "routine",
+  "@welcomeScreenTitleHighlight": {
+    "description": "Highlighted part of the welcome screen title"
+  },
+  "welcomeScreenTitleSuffix": "\nbest.",
+  "@welcomeScreenTitleSuffix": {
+    "description": "Last part of the welcome screen title"
+  },
+  "welcomeScreenSubtitleKnowledge": "This application assumes that you\nknow your exercises by heart.",
+  "@welcomeScreenSubtitleKnowledge": {
+    "description": "Subtitle text about knowing exercises"
+  },
+  "welcomeScreenSubtitleSequence": "Sequence them exactly as you wish.",
+  "@welcomeScreenSubtitleSequence": {
+    "description": "Subtitle text about sequencing"
+  },
+  "buttonGetStarted": "Get Started",
+  "@buttonGetStarted": {
+    "description": "Text for the Get Started button"
+  },
+  "maintenanceDatabaseReloadFixtures": "Database : reload fixtures",
+  "@maintenanceDatabaseReloadFixtures": {
+    "description": "Label for database reload fixtures section"
+  },
+  "maintenanceHistoryDeleteAllData": "History : delete all history datas",
+  "@maintenanceHistoryDeleteAllData": {
+    "description": "Label for history delete section"
+  },
+  "maintenanceButtonDeleteHistory": "Delete history",
+  "@maintenanceButtonDeleteHistory": {
+    "description": "Label for delete history button"
+  },
+  "maintenanceToastHistoryDeleted": "History datas deleted",
+  "@maintenanceToastHistoryDeleted": {
+    "description": "Toast message after history deletion"
+  },
+  "feedbackImprovementTitle": "Help us improve!",
+  "@feedbackImprovementTitle": {
+    "description": "Title of the feedback form"
+  },
+  "feedbackHintText": "Tell us more...",
+  "@feedbackHintText": {
+    "description": "Hint text for the feedback text field"
+  },
+  "feedbackSendButton": "Send",
+  "@feedbackSendButton": {
+    "description": "Text for the send feedback button"
+  }
+}
