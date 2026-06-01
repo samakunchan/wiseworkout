@@ -19,34 +19,58 @@ class WorkoutEngineStore {
   final WorkoutSettingsStore _settingsStore;
 
   /// The active state of the timer countdown (working, resting, paused, etc.).
-  late final Signal<TimerStatus> status = Signal<TimerStatus>(TimerStatus.initial, debugLabel: ' TIMER STATUS ');
+  late final Signal<TimerStatus> status = Signal<TimerStatus>(
+    TimerStatus.initial,
+    options: const SignalOptions(name: ' TIMER STATUS '),
+  );
 
   /// The total elapsed workout time completed by the user (in seconds).
-  final Signal<int> currentTimeCompleted = Signal<int>(0, debugLabel: ' TIME COMPLETED ');
+  final Signal<int> currentTimeCompleted = Signal<int>(
+    0,
+    options: const SignalOptions(name: ' TIME COMPLETED '),
+  );
 
   /// The remaining seconds in the current active interval (work or rest).
-  late final Signal<int> currentTime = Signal<int>(_settingsStore.workTime.value, debugLabel: ' CURRENT TIME ');
+  late final Signal<int> currentTime = Signal<int>(
+    _settingsStore.workTime.value,
+    options: const SignalOptions(name: ' CURRENT TIME '),
+  );
 
   /// The current total pause duration elapsed in the active interval.
-  final Signal<int> currentPause = Signal<int>(0, debugLabel: ' CURRENT PAUSE ');
+  final Signal<int> currentPause = Signal<int>(
+    0,
+    options: const SignalOptions(name: ' CURRENT PAUSE '),
+  );
 
   /// The active set cycle currently in progress.
-  final Signal<int> currentSet = Signal<int>(1, debugLabel: ' CURRENT SET ');
+  final Signal<int> currentSet = Signal<int>(
+    1,
+    options: const SignalOptions(name: ' CURRENT SET '),
+  );
 
   /// The total count of temporary breaks/pauses taken during this session.
-  final Signal<int> totalBreak = Signal<int>(0, debugLabel: ' NUMBER OF BREAK ');
+  final Signal<int> totalBreak = Signal<int>(
+    0,
+    options: const SignalOptions(name: ' NUMBER OF BREAK '),
+  );
 
   /// Whether the user is in a work interval (true) or rest interval (false).
-  final Signal<bool> isWorkTime = Signal<bool>(true, debugLabel: ' WORKTIME ACTIVE ');
+  final Signal<bool> isWorkTime = Signal<bool>(
+    true,
+    options: const SignalOptions(name: ' WORKTIME ACTIVE '),
+  );
 
   /// A computed derived signal indicating whether the timer is currently actively counting down.
   late final ReadonlySignal<bool> isRunning = computed(
     () => status.value == TimerStatus.working || status.value == TimerStatus.resting,
-    debugLabel: ' RUNNING ',
+    options: const ComputedOptions(name: ' RUNNING '),
   );
 
   /// A computed derived signal indicating whether the session has been reset/is at the initial state.
-  late final ReadonlySignal<bool> isReseted = computed(() => status.value == TimerStatus.initial, debugLabel: ' RESETING ');
+  late final ReadonlySignal<bool> isReseted = computed(
+    () => status.value == TimerStatus.initial,
+    options: const ComputedOptions(name: ' RESETING '),
+  );
 
   /// Resets all active execution countdown signals back to their starting values.
   void reset() {
