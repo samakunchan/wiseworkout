@@ -397,6 +397,7 @@ class CompiledApp {
       _1301: (x0,x1,x2) => x0.setAttribute(x1,x2),
       _1303: (x0,x1) => x0.getAttribute(x1),
       _1323: (x0,x1) => x0.getItem(x1),
+      _1324: (x0,x1,x2) => x0.setItem(x1,x2),
       _1332: (x0,x1) => x0.appendChild(x1),
       _1358: () => new AudioContext(),
       _1359: (x0,x1) => x0.createMediaElementSource(x1),
