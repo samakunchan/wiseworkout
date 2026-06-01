@@ -1,5 +1,22 @@
 # CHANGELOG wiseworkout
 
+## 🚀 0.5.0 - 01/06/2026
+
+### Added
+- Created the core Timer screen feature scaffold (`lib/features/timer`) including the Main Timer Screen and its dedicated sub-widgets (play, pause, stop buttons, circular/classic display countdown elements, headers, and footer set counters) designed as pure UI components with no direct signals dependencies.
+- Created the core History feature scaffold (`lib/features/history`) containing the Workout History Screen and widgets (card summary, tabular rows) designed to accept custom data lists cleanly.
+- Introduced `ListWorkoutHistoryExtension` (`lib/core/extensions/list_extension.dart`) to handle workout metrics (today's sessions, streak counters, and average session times).
+- Established a global PageView screens composition helper (`AppHelper` in `lib/features/helpers.dart`) exposing the `getScreens` static constructor to elegantly orchestrate multiple features.
+
+### Changed
+- Upgraded the project package dependencies in `pubspec.yaml` to their latest compatible major versions: `signals` (`^7.1.0`), `signals_flutter` (`^7.1.0`), `signals_core` (`^7.0.0`), `device_info_plus` (`^13.1.0`), `fl_chart` (`^1.2.0`), `package_info_plus` (`^10.1.0`), `upgrader` (`^13.4.0`), and `very_good_analysis` (`^10.1.0`).
+- Refactored `workout_engine_store.dart` and `workout_settings_store.dart` to migrate the deprecated `debugLabel` property to the modern `options: SignalOptions(name: ...)` API signature.
+- Optimized `integer_extension.dart` to use the truncating division operator (`~/`) in compliance with the updated static analysis rule constraints.
+
+### Fixed
+- Resolved a critical compile-time failure on Chrome (Web) caused by `package:sqlite3` FFI imports on unsupported web environments, by introducing a conditional-import database connection orchestrator (`lib/features/database/connection/`).
+- Fixed an `Unexpected null value` runtime exception when rendering screens accessing localizations inside `MaterialApp`, by registering `localizationsDelegates` and `supportedLocales` in `lib/main.dart`.
+
 ## 🚀 0.4.0 - 01/06/2026
 
 ### Added

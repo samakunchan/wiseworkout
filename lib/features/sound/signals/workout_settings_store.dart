@@ -12,36 +12,63 @@ import 'package:wiseworkout/features/sound/models/timer_configuration_model.dart
 /// isolated from the live workout execution countdown.
 class WorkoutSettingsStore {
   /// The duration (in seconds) of active work intervals.
-  final Signal<int> workTime = Signal<int>(90, debugLabel: ' WORK TIME ');
+  final Signal<int> workTime = Signal<int>(
+    90,
+    options: const SignalOptions(name: ' WORK TIME '),
+  );
 
   /// The duration (in seconds) of rest intervals.
-  final Signal<int> restTime = Signal<int>(15, debugLabel: ' REST TIME ');
+  final Signal<int> restTime = Signal<int>(
+    15,
+    options: const SignalOptions(name: ' REST TIME '),
+  );
 
   /// The total number of sets planned for the workout.
-  final Signal<int> totalSets = Signal<int>(2, debugLabel: ' TOTAL SETS ');
+  final Signal<int> totalSets = Signal<int>(
+    2,
+    options: const SignalOptions(name: ' TOTAL SETS '),
+  );
 
   /// The active set cycle sequence.
-  final Signal<int> numberOfSets = Signal<int>(1, debugLabel: ' NUMBER OF SETS ');
+  final Signal<int> numberOfSets = Signal<int>(
+    1,
+    options: const SignalOptions(name: ' NUMBER OF SETS '),
+  );
 
   /// The current summarized set index.
-  final Signal<int> summarizeSet = Signal<int>(0, debugLabel: ' CURRENT SET ');
+  final Signal<int> summarizeSet = Signal<int>(
+    0,
+    options: const SignalOptions(name: ' CURRENT SET '),
+  );
 
   /// Total work time summarized across active intervals.
-  final Signal<int> summarizeWorkTime = Signal<int>(0, debugLabel: ' CURRENT SET ');
+  final Signal<int> summarizeWorkTime = Signal<int>(
+    0,
+    options: const SignalOptions(name: ' CURRENT SET '),
+  );
 
   /// Total rest time summarized across active intervals.
-  final Signal<int> summarizeRestTime = Signal<int>(0, debugLabel: ' CURRENT SET ');
+  final Signal<int> summarizeRestTime = Signal<int>(
+    0,
+    options: const SignalOptions(name: ' CURRENT SET '),
+  );
 
   /// Whether the UI utilizes a circular visual countdown representation.
-  final Signal<bool> useCircularTimer = Signal<bool>(false, debugLabel: ' CIRCULAR TIMER ');
+  final Signal<bool> useCircularTimer = Signal<bool>(
+    false,
+    options: const SignalOptions(name: ' CIRCULAR TIMER '),
+  );
 
   /// Tracks if audio signals are actively triggering/enabled.
-  final Signal<bool> isSoundActive = Signal<bool>(false, debugLabel: ' SOUND ACTIVATING ');
-  
+  final Signal<bool> isSoundActive = Signal<bool>(
+    false,
+    options: const SignalOptions(name: ' SOUND ACTIVATING '),
+  );
+
   /// The underlying immutable model containing preset configurations and properties.
   final Signal<TimerConfigurationModel> timerConf = Signal<TimerConfigurationModel>(
     TimerConfigurationModel.empty,
-    debugLabel: ' SETTINGS ',
+    options: const SignalOptions(name: ' SETTINGS '),
   );
 
   /// Resets all settings configuration signals back to their factory default values.
