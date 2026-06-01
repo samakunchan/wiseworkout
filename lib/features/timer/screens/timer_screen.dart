@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:signals_flutter/signals_flutter.dart';
 import 'package:wiseworkout/core/extensions/context_extension.dart';
 import 'package:wiseworkout/core/extensions/integer_extension.dart';
 import 'package:wiseworkout/core/extensions/string_extension.dart';
 import 'package:wiseworkout/core/themes/constantes.dart';
+import 'package:wiseworkout/features/di/services/service_locator.dart';
+import 'package:wiseworkout/features/timer/signals/workout_engine_store.dart';
+import 'package:wiseworkout/features/timer/signals/workout_settings_store.dart';
 import 'package:wiseworkout/features/timer/widgets/timer_action_button_pause.dart';
 import 'package:wiseworkout/features/timer/widgets/timer_action_button_start.dart';
 import 'package:wiseworkout/features/timer/widgets/timer_action_button_stop.dart';
@@ -11,43 +15,30 @@ import 'package:wiseworkout/features/timer/widgets/timer_classic_display.dart';
 import 'package:wiseworkout/features/timer/widgets/timer_text_bottom.dart';
 import 'package:wiseworkout/features/timer/widgets/timer_text_header.dart';
 
-class TimerScreen extends StatelessWidget {
+class TimerScreen extends SignalWidget {
   const TimerScreen({
-    required this.onPauseSession,
-    required this.onStartSession,
-    required this.onStopSession,
     required this.pageController,
-    this.currentTime = 90,
-    this.workDuration = 90,
-    this.restDuration = 15,
-    this.currentSet = 1,
-    this.numberOfSets = 4,
-    this.useCircularTimer = false,
-    this.isWorkTime = true,
-    this.isReseted = true,
-    this.isRunning = false,
-    this.isSessionComplete = false,
     super.key,
   });
 
   final PageController pageController;
-  final VoidCallback onStopSession;
-  final VoidCallback onStartSession;
-  final VoidCallback onPauseSession;
-
-  final int currentTime;
-  final int workDuration;
-  final int restDuration;
-  final int currentSet;
-  final int numberOfSets;
-  final bool useCircularTimer;
-  final bool isWorkTime;
-  final bool isReseted;
-  final bool isRunning;
-  final bool isSessionComplete;
 
   @override
   Widget build(BuildContext context) {
+    final WorkoutEngineStore store = kGetIt<WorkoutEngineStore>();
+    final WorkoutSettingsStore settings = kGetIt<WorkoutSettingsStore>();
+
+    final int currentTime = store.currentTime.value;
+    final int workDuration = settings.workTime.value;
+    final int restDuration = settings.restTime.value;
+    final int currentSet = store.currentSet.value;
+    final int numberOfSets = settings.totalSets.value;
+    final bool useCircularTimer = settings.useCircularTimer.value;
+    final bool isWorkTime = store.isWorkTime.value;
+    final bool isReseted = store.isReseted.value;
+    final bool isRunning = store.isRunning.value;
+    final bool isSessionComplete = store.isSessionComplete.value;
+
     final String textTime = context.localizations.textTime.ucFirst();
     final String textRestTime = context.localizations.textRestTime.ucFirst();
     final String textTimeValue = workDuration.formateTimeExtended();
@@ -111,17 +102,17 @@ class TimerScreen extends StatelessWidget {
                   spacing: 20,
                   children: [
                     TimerActionButtonStop(
-                      onStopSession: onStopSession,
+                      onStopSession: store.reset,
                       isReseted: isReseted,
                     ),
                     TimerActionButtonStart(
-                      onStartSession: onStartSession,
+                      onStartSession: store.start,
                       isReseted: isReseted,
                       isRunning: isRunning,
                       isSessionComplete: isSessionComplete,
                     ),
                     TimerActionButtonPause(
-                      onPauseSession: onPauseSession,
+                      onPauseSession: store.pause,
                       isReseted: isReseted,
                       isRunning: isRunning,
                     ),
