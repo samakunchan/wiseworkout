@@ -7,15 +7,8 @@ class AppHelper {
   static List<Widget> getScreens({required PageController pageController}) {
     return List<Widget>.of(
       [
-        TimerScreen(
-          onPauseSession: () {},
-          onStartSession: () {},
-          onStopSession: () {},
-          pageController: pageController,
-        ),
-        HistoryScreen(
-          pageController: pageController,
-        ),
+        TimerScreen(pageController: pageController),
+        HistoryScreen(pageController: pageController),
       ],
       growable: false,
     );

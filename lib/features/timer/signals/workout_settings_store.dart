@@ -1,5 +1,5 @@
 import 'package:signals/signals.dart';
-import 'package:wiseworkout/features/sound/models/timer_configuration_model.dart';
+import 'package:wiseworkout/features/timer/models/timer_configuration_model.dart';
 
 /// ============================================================================
 /// ROLE: CONFIGURATION STORE
