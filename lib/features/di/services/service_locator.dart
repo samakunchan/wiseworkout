@@ -3,8 +3,8 @@ import 'package:get_it/get_it.dart';
 import 'package:wiseworkout/features/cache/services/cache_service.dart';
 import 'package:wiseworkout/features/database/services/database_service.dart';
 import 'package:wiseworkout/features/sound/services/sound_service.dart';
-import 'package:wiseworkout/features/sound/signals/workout_engine_store.dart';
-import 'package:wiseworkout/features/sound/signals/workout_settings_store.dart';
+import 'package:wiseworkout/features/timer/signals/workout_engine_store.dart';
+import 'package:wiseworkout/features/timer/signals/workout_settings_store.dart';
 
 final GetIt kGetIt = GetIt.instance;
 
