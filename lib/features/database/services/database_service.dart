@@ -1,10 +1,10 @@
 import 'dart:io';
 
 import 'package:drift/drift.dart';
-import 'package:drift/native.dart';
 import 'package:flutter/foundation.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
+import 'package:wiseworkout/features/database/connection/connection.dart';
 import 'package:wiseworkout/features/database/enums/enums.dart';
 import 'package:wiseworkout/features/database/models/bound_model.dart';
 import 'package:wiseworkout/features/database/models/preset_model.dart';
@@ -16,7 +16,7 @@ part 'database_service.g.dart';
 
 @DriftDatabase(tables: [Preset, Bound, Setting, History])
 class AppDatabase extends _$AppDatabase {
-  AppDatabase() : super(_openConnection());
+  AppDatabase() : super(openConnection());
 
   /// PRESET
   // To get all presets with their bounds
@@ -269,6 +269,12 @@ class AppDatabase extends _$AppDatabase {
 
   /// Méthode pour supprimer le fichier de base de données.
   Future<void> deleteDatabaseFile() async {
+    if (kIsWeb) {
+      if (kDebugMode) {
+        print('🌐 La suppression de la base de données est gérée par IndexedDB sur le web.');
+      }
+      return;
+    }
     if (kDebugMode) {
       print('💣 Tentative de suppression du fichier BDD...');
     }
@@ -298,13 +304,6 @@ class AppDatabase extends _$AppDatabase {
 Future<File> resolveDbFile() async {
   final Directory dbFolder = await getApplicationDocumentsDirectory();
   return File(p.join(dbFolder.path, 'wiseworkout.sqlite'));
-}
-
-LazyDatabase _openConnection() {
-  return LazyDatabase(() async {
-    final File file = await resolveDbFile();
-    return NativeDatabase(file);
-  });
 }
 
 /// Must be in this file
