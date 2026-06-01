@@ -5,8 +5,9 @@ import 'package:wiseworkout/core/extensions/integer_extension.dart';
 import 'package:wiseworkout/core/extensions/string_extension.dart';
 import 'package:wiseworkout/core/themes/constantes.dart';
 import 'package:wiseworkout/features/di/services/service_locator.dart';
+import 'package:wiseworkout/features/settings/screens/settings_screen.dart';
+import 'package:wiseworkout/features/settings/signals/workout_settings_store.dart';
 import 'package:wiseworkout/features/timer/signals/workout_engine_store.dart';
-import 'package:wiseworkout/features/timer/signals/workout_settings_store.dart';
 import 'package:wiseworkout/features/timer/widgets/timer_action_button_pause.dart';
 import 'package:wiseworkout/features/timer/widgets/timer_action_button_start.dart';
 import 'package:wiseworkout/features/timer/widgets/timer_action_button_stop.dart';
@@ -58,6 +59,18 @@ class TimerScreen extends SignalWidget {
                     TextSpan(text: '$textRestTime : $textRestTimeValue'),
                   ],
                 ),
+              ),
+              const Spacer(),
+              IconButton(
+                icon: const Icon(Icons.settings),
+                onPressed: () async {
+                  await Navigator.push<void>(
+                    context,
+                    MaterialPageRoute<void>(
+                      builder: (_) => const SettingsScreen(),
+                    ),
+                  );
+                },
               ),
             ],
           ),

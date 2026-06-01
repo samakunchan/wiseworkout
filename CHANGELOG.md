@@ -1,5 +1,25 @@
 # CHANGELOG wiseworkout
 
+## 🚀 0.7.0 - 01/06/2026
+
+### Added
+- Created the Settings feature package under `lib/features/settings` with a full suite of reactive components:
+  - `SettingsScreen` scrollable settings page layout.
+  - Namespaced keyboard input modular widgets: `TimerSetUpClickableUnit`, `TimerSetUpKey`, `TimerSetUpNumericPad`, and `TimerSetUpValidationButton`.
+  - Core settings custom widgets: `SettingHeader`, `SettingBoundSlider`, `SettingSetsButtons`, `SettingSummarize`, `SettingSwitchesTile`, and `SettingSaveButton`.
+  - Shared typography elements: `SettingLabelText`, `SettingValueText`, and `SettingValueTextClickable`.
+- Implemented `loadFromCache` in `WorkoutSettingsStore` to fetch cached settings at startup and instantly populate all reactive signals.
+
+### Changed
+- Refactored `TimerSetUpScreen` to strip all nested helper methods, delegating layout assembly and distinct haptic playbacks (light/medium impacts) to custom namespaced widgets.
+- Upgraded deprecated `Watch` wrappers in sliders, switch tiles, set buttons, and summary widgets to the modern, performant `SignalBuilder` class.
+- Modified `main.dart` to make `main()` asynchronous and await pre-loading configuration from cache before rendering.
+- Embedded a Settings navigation button (`Icons.settings`) in the top info row of `TimerScreen`.
+
+### Fixed
+- Fixed pre-existing linter warnings in `workout_engine_store.dart`, including unawaited futures (awaiting `reset()`), removing obsolete switch statement `break`s in compliance with Dart 3 switch specifications, and wrapping background triggers in `unawaited` blocks.
+- Fixed a `discarded_futures` warning inside the numeric keypad haptic functions by making callbacks fully asynchronous.
+
 ## 🚀 0.6.0 - 01/06/2026
 
 ### Added

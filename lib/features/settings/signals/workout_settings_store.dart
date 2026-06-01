@@ -1,4 +1,8 @@
+import 'dart:convert';
+import 'package:flutter/foundation.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:signals/signals.dart';
+import 'package:wiseworkout/features/cache/services/cache_service.dart';
 import 'package:wiseworkout/features/timer/models/timer_configuration_model.dart';
 
 /// ============================================================================
@@ -70,6 +74,43 @@ class WorkoutSettingsStore {
     TimerConfigurationModel.empty,
     options: const SignalOptions(name: ' SETTINGS '),
   );
+
+  /// Loads configuration settings from the SharedPreferences cache.
+  Future<void> loadFromCache(CacheService cacheService) async {
+    final SharedPreferencesWithCache prefs = await cacheService.prefsWithCache;
+    final String? jsonStr = prefs.getString(timerConfigurationKey);
+    if (jsonStr != null) {
+      try {
+        final Map<String, dynamic> json = jsonDecode(jsonStr) as Map<String, dynamic>;
+        final TimerConfigurationModel conf = TimerConfigurationModel.fromJson(json);
+        workTime.value = conf.workDuration;
+        restTime.value = conf.restDuration;
+        totalSets.value = conf.numberOfSets;
+        useCircularTimer.value = conf.useCircularTimer;
+        isSoundActive.value = conf.soundSelected;
+        timerConf.value = conf;
+
+        summarizeWorkTime.value = conf.workDuration;
+        summarizeRestTime.value = conf.restDuration;
+        summarizeSet.value = conf.numberOfSets;
+      } on Exception catch (e) {
+        if (kDebugMode) {
+          print('Error loading settings from cache: $e');
+        }
+      }
+    } else {
+      // Default initial states if cache is empty
+      workTime.value = 90;
+      restTime.value = 15;
+      totalSets.value = 2;
+      useCircularTimer.value = false;
+      isSoundActive.value = false;
+
+      summarizeWorkTime.value = 90;
+      summarizeRestTime.value = 15;
+      summarizeSet.value = 2;
+    }
+  }
 
   /// Resets all settings configuration signals back to their factory default values.
   void reset() {
