@@ -1,5 +1,22 @@
 # CHANGELOG wiseworkout
 
+## 🚀 0.4.0 - 01/06/2026
+
+### Added
+- Integrated the Drift SQLite database feature with pre-populated configurations (`kAllPresets`) and modular schemas (`Preset`, `Bound`, `Setting`, `History`) under `lib/features/database/`.
+- Reorganized the database service, tables, and fixtures into a dedicated `services/` subfolder.
+- Re-architected workout state management by splitting settings from live execution countdowns into two highly isolated instance-based stores: `WorkoutSettingsStore` (Configuration role) and `WorkoutEngineStore` (Runtime role) under `lib/features/sound/signals/`.
+- Introduced a central state enum (`TimerStatus`) and automated computed derived statuses (`isRunning`, `isReseted`) inside the engine store to eliminate race conditions.
+- Implemented `SoundService` and `CacheService` utilizing lazy DI singletons and key-restricted caching under `lib/features/sound/` and `lib/features/cache/`.
+- Established a global dependency injection locator (`setupLocator()` inside `lib/features/di/services/service_locator.dart`) leveraging `get_it` to cleanly manage all singleton services.
+- Added comprehensive Dartdoc documentation (`///` comments) to explain the signals architecture and store responsibilities.
+
+### Changed
+- Refactored `database.dart` to `database_service.dart` for cleaner service-level semantics.
+
+### Fixed
+- Resolved a critical build compilation failure (`'dart compile' does not support build hooks`) under the project's older Dart SDK (`^3.10.1`) by specifying dependency overrides for `drift`, `drift_dev`, `sqlite3`, `sqlite3_flutter_libs`, and `path_provider_android`.
+
 ## 🚀 0.3.0 - 01/06/2026
 
 ### Added
