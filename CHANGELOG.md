@@ -1,5 +1,23 @@
 # CHANGELOG wiseworkout
 
+## 🚀 0.6.0 - 01/06/2026
+
+### Added
+- Standardized modern Wasm-based SQLite initialization for web platforms using `WasmDatabase.open` in `lib/features/database/connection/web.dart` to bypass legacy `sql.js` requirements.
+- Placed fully compiled `sqlite3.wasm` and `worker.dart.js` (compiled from `worker.dart` using Dart compiler hooks) directly in the `web/` folder for immediate local debugging.
+- Added visual Architecture & Unidirectional Dependency Flow mermaid diagram to `README.md`.
+
+### Changed
+- Restructured the modular project architecture by transferring all workout state management controllers (`WorkoutEngineStore` and `WorkoutSettingsStore`) and configuration models (`TimerStatus` enum, `TimerConfigurationModel`) out of the `sound` feature and directly into `lib/features/timer/`.
+- Refactored `SoundService` to make it a generic, stateless, standalone audio asset helper with zero circular dependencies on workout stores.
+- Updated all dependency injections and watching imports cleanly.
+- Migrated deprecated `.watch(context)` signal API calls in `TimerScreen` to the modern, implicit signal value tracking method by extending `SignalWidget` and using `.value`.
+
+### Fixed
+- Resolved `Could not access the sql.js javascript library` runtime crash on the Web.
+- Fixed a `MIME type` WebAssembly compilation error on Chrome caused by empty placeholder symlinks for `sqlite3.wasm`.
+- Prevented saving empty log rows to the database history when resetting a session before it has ticked.
+
 ## 🚀 0.5.0 - 01/06/2026
 
 ### Added
