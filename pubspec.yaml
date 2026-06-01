@@ -1,7 +1,7 @@
 name: wiseworkout
 description: "A new Flutter project for personal workout."
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-version: 0.3.0+1
+version: 0.4.0+1
 
 environment:
   sdk: ^3.10.1
@@ -103,6 +103,13 @@ dev_dependencies:
 
   # Mocking
   mockito: ^5.4.4
+
+dependency_overrides:
+  path_provider_android: 2.2.22
+  drift: 2.29.0
+  drift_dev: 2.29.0
+  sqlite3: 2.9.4
+  sqlite3_flutter_libs: 0.5.42
 
 flutter:
   uses-material-design: true

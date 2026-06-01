@@ -1,0 +1,21 @@
+import 'package:audioplayers/audioplayers.dart';
+import 'package:get_it/get_it.dart';
+import 'package:wiseworkout/features/cache/services/cache_service.dart';
+import 'package:wiseworkout/features/database/services/database_service.dart';
+import 'package:wiseworkout/features/sound/services/sound_service.dart';
+import 'package:wiseworkout/features/sound/signals/workout_engine_store.dart';
+import 'package:wiseworkout/features/sound/signals/workout_settings_store.dart';
+
+final GetIt kGetIt = GetIt.instance;
+
+void setupLocator() {
+  kGetIt
+    ..registerSingleton<AppDatabase>(AppDatabase())
+    ..registerLazySingleton<AudioPlayer>(AudioPlayer.new)
+    ..registerLazySingleton<SoundService>(SoundService.new)
+    ..registerLazySingleton<CacheService>(CacheService.new)
+    ..registerLazySingleton<WorkoutSettingsStore>(WorkoutSettingsStore.new)
+    ..registerLazySingleton<WorkoutEngineStore>(
+      () => WorkoutEngineStore(kGetIt<WorkoutSettingsStore>()),
+    );
+}
