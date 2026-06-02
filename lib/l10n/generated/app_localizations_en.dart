@@ -101,6 +101,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get textSummarizeEndText => ' for the session.';
 
   @override
+  String get drawerHeaderPreferences => 'Preferences';
+
+  @override
+  String get drawerHeaderTools => 'Tools';
+
+  @override
+  String get drawerHeaderSupport => 'Support';
+
+  @override
+  String get drawerHeaderLegal => 'Legal';
+
+  @override
   String get drawerMonthlySummaryText => 'Monthly summary';
 
   @override

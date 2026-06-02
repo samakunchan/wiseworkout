@@ -1,11 +1,13 @@
 import 'package:country_flags/country_flags.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:signals/signals_flutter.dart';
 import 'package:wiseworkout/core/extensions/context_extension.dart';
 import 'package:wiseworkout/core/extensions/string_extension.dart';
 import 'package:wiseworkout/core/themes/constantes.dart';
 import 'package:wiseworkout/features/di/services/service_locator.dart';
+import 'package:wiseworkout/features/more/screens/about_us_screen.dart';
 import 'package:wiseworkout/features/settings/enums/enums.dart';
 import 'package:wiseworkout/features/settings/signals/locale_store.dart';
 import 'package:wiseworkout/features/settings/signals/theme_mode_store.dart';
@@ -79,6 +81,9 @@ class WorkoutDrawer extends StatelessWidget {
               ],
             ),
           ),
+
+          /// Preferences Section
+          _buildSectionHeader(context, context.localizations.drawerHeaderPreferences),
 
           /// Change locale
           SignalBuilder(
@@ -156,7 +161,11 @@ class WorkoutDrawer extends StatelessWidget {
             },
           ),
 
-          /// Menus
+          /// Tools Section
+          const Divider(height: 1),
+          _buildSectionHeader(context, context.localizations.drawerHeaderTools),
+
+          /// Monthly Summary
           ListTile(
             leading: Icon(Icons.query_stats, color: Theme.of(context).colorScheme.primary),
             title: Text(context.localizations.drawerMonthlySummaryText),
@@ -166,15 +175,32 @@ class WorkoutDrawer extends StatelessWidget {
               );
             },
           ),
-          Divider(color: Theme.of(context).colorScheme.onSurface),
+
+          /// Maintenance
+          ListTile(
+            leading: Icon(Icons.home_repair_service, color: Theme.of(context).colorScheme.primary),
+            title: Text(context.localizations.titleMaintenanceScreen),
+            onTap: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text(context.localizations.titleMaintenanceScreen)),
+              );
+            },
+          ),
+
+          /// Support Section
+          const Divider(height: 1),
+          _buildSectionHeader(context, context.localizations.drawerHeaderSupport),
 
           /// About us
           ListTile(
             leading: Icon(Icons.info, color: Theme.of(context).colorScheme.primary),
             title: Text(context.localizations.drawerAboutUsText),
-            onTap: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(context.localizations.drawerAboutUsText)),
+            onTap: () async {
+              await Navigator.push(
+                context,
+                MaterialPageRoute<void>(
+                  builder: (_) => const AboutUsScreen(),
+                ),
               );
             },
           ),
@@ -190,64 +216,127 @@ class WorkoutDrawer extends StatelessWidget {
             },
           ),
 
-          /// Authorization
-          ListTile(
-            leading: Icon(Icons.tag, color: Theme.of(context).colorScheme.primary),
-            title: Text(context.localizations.drawerAuthorizationText),
-            onTap: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(context.localizations.drawerAuthorizationText)),
-              );
-            },
+          /// Rate on store
+          Badge(
+            isLabelVisible: kIsWeb,
+            backgroundColor: Theme.of(context).colorScheme.primary.withValues(alpha: .1),
+            textColor: Theme.of(context).colorScheme.primary,
+            textStyle: const TextStyle(fontSize: 10),
+            alignment: .topCenter,
+            label: _buildWebDisabledBadge(context),
+            child: Opacity(
+              opacity: kIsWeb ? .5 : 1,
+              child: ListTile(
+                leading: Icon(Icons.star, color: Theme.of(context).colorScheme.primary),
+                title: Text(context.localizations.drawerRateOnStore),
+                onTap: kIsWeb
+                    ? null
+                    : () {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text(context.localizations.drawerRateOnStore)),
+                        );
+                      },
+              ),
+            ),
           ),
 
-          /// Rate on store
-          ListTile(
-            leading: Icon(Icons.star, color: Theme.of(context).colorScheme.primary),
-            title: Text(context.localizations.drawerRateOnStore),
-            onTap: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(context.localizations.drawerRateOnStore)),
-              );
-            },
+          /// Legal Section
+          const Divider(height: 1),
+          _buildSectionHeader(context, context.localizations.drawerHeaderLegal),
+
+          /// Authorization
+          Badge(
+            isLabelVisible: kIsWeb,
+            backgroundColor: Theme.of(context).colorScheme.primary.withValues(alpha: .1),
+            textColor: Theme.of(context).colorScheme.primary,
+            textStyle: const TextStyle(fontSize: 10),
+            alignment: .topCenter,
+            label: _buildWebDisabledBadge(context),
+            child: Opacity(
+              opacity: kIsWeb ? .5 : 1,
+              child: ListTile(
+                leading: Icon(Icons.tag, color: Theme.of(context).colorScheme.primary),
+                title: Text(context.localizations.drawerAuthorizationText),
+                onTap: kIsWeb
+                    ? null
+                    : () {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text(context.localizations.drawerAuthorizationText)),
+                        );
+                      },
+              ),
+            ),
           ),
-          Divider(color: Theme.of(context).colorScheme.onSurface),
 
           /// Privacy
-          ListTile(
-            leading: Icon(Icons.privacy_tip, color: Theme.of(context).colorScheme.primary),
-            title: Text(context.localizations.drawerPrivacyPolicy),
-            onTap: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(context.localizations.drawerPrivacyPolicy)),
-              );
-            },
+          Badge(
+            isLabelVisible: kIsWeb,
+            backgroundColor: Theme.of(context).colorScheme.primary.withValues(alpha: .1),
+            textColor: Theme.of(context).colorScheme.primary,
+            textStyle: const TextStyle(fontSize: 10),
+            alignment: .topCenter,
+            label: _buildWebDisabledBadge(context),
+            child: Opacity(
+              opacity: kIsWeb ? .5 : 1,
+              child: ListTile(
+                leading: Icon(Icons.privacy_tip, color: Theme.of(context).colorScheme.primary),
+                title: Text(context.localizations.drawerPrivacyPolicy),
+                onTap: kIsWeb
+                    ? null
+                    : () {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text(context.localizations.drawerPrivacyPolicy)),
+                        );
+                      },
+              ),
+            ),
           ),
 
           /// Terms of service
-          ListTile(
-            leading: Icon(Icons.description, color: Theme.of(context).colorScheme.primary),
-            title: Text(context.localizations.drawerTermsOfService),
-            onTap: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(context.localizations.drawerTermsOfService)),
-              );
-            },
-          ),
-
-          /// Maintenance
-          ListTile(
-            leading: Icon(Icons.home_repair_service, color: Theme.of(context).colorScheme.primary),
-            title: Text(context.localizations.titleMaintenanceScreen),
-            onTap: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(context.localizations.titleMaintenanceScreen)),
-              );
-            },
+          Badge(
+            isLabelVisible: kIsWeb,
+            backgroundColor: Theme.of(context).colorScheme.primary.withValues(alpha: .1),
+            textColor: Theme.of(context).colorScheme.primary,
+            textStyle: const TextStyle(fontSize: 10),
+            alignment: .topCenter,
+            label: _buildWebDisabledBadge(context),
+            child: Opacity(
+              opacity: kIsWeb ? .5 : 1,
+              child: ListTile(
+                leading: Icon(Icons.description, color: Theme.of(context).colorScheme.primary),
+                title: Text(context.localizations.drawerTermsOfService),
+                onTap: kIsWeb
+                    ? null
+                    : () {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text(context.localizations.drawerTermsOfService)),
+                        );
+                      },
+              ),
+            ),
           ),
         ],
       ),
     );
+  }
+
+  Widget _buildSectionHeader(BuildContext context, String title) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 16, top: 12, bottom: 4),
+      child: Text(
+        title,
+        style: TextStyle(
+          fontSize: 11,
+          fontWeight: .bold,
+          color: Theme.of(context).colorScheme.primary,
+          letterSpacing: 1.2,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildWebDisabledBadge(BuildContext context) {
+    return const Text('disabled for this demo');
   }
 
   IconData _getIcon(ThemeMode themeMode) {
