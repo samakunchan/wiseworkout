@@ -133,6 +133,16 @@ class AppDatabase extends _$AppDatabase {
     return rows.map(_buildHistoryModel).toList();
   }
 
+  // To watch all workout history
+  Stream<List<WorkoutHistoryModel>> watchAllHistories() {
+    final SimpleSelectStatement<$HistoryTable, HistoryData> query = select(history)
+      ..orderBy([(t) => OrderingTerm(expression: t.date)]);
+
+    return query.watch().map((List<HistoryData> rows) {
+      return rows.map(_buildHistoryModel).toList();
+    });
+  }
+
   // To create a new workout history
   Future<int> createHistory(HistoryCompanion historyCompanion) => into(history).insert(historyCompanion);
 
