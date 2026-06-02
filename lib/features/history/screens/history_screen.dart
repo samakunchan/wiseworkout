@@ -1,26 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:signals_flutter/signals_flutter.dart';
 import 'package:wiseworkout/core/extensions/context_extension.dart';
 import 'package:wiseworkout/core/extensions/integer_extension.dart';
 import 'package:wiseworkout/core/extensions/list_extension.dart';
 import 'package:wiseworkout/core/extensions/string_extension.dart';
 import 'package:wiseworkout/core/themes/constantes.dart';
 import 'package:wiseworkout/features/database/models/workout_history_model.dart';
+import 'package:wiseworkout/features/di/services/service_locator.dart';
+import 'package:wiseworkout/features/history/signals/workout_history_store.dart';
 import 'package:wiseworkout/features/history/widgets/card_summary.dart';
 import 'package:wiseworkout/features/history/widgets/history_row_table.dart';
 
-class HistoryScreen extends StatelessWidget {
+class HistoryScreen extends SignalWidget {
   const HistoryScreen({
     required this.pageController,
-    this.histories = const <WorkoutHistoryModel>[],
     super.key,
   });
 
   final PageController pageController;
-  final List<WorkoutHistoryModel> histories;
 
   @override
   Widget build(BuildContext context) {
+    final List<WorkoutHistoryModel> histories = kGetIt<WorkoutHistoryStore>().histories.value;
     final DateFormat dateFormat = DateFormat.MMMd(Localizations.localeOf(context).toString());
 
     final List<WorkoutHistoryModel> currentDayHistories = histories.filteredByCurrentDay();

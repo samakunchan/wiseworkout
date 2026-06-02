@@ -1,5 +1,20 @@
 # CHANGELOG wiseworkout
 
+## 🚀 0.8.0 - 02/06/2026
+
+### Added
+- Created a dedicated `WorkoutHistoryStore` to manage reactive streams of completed workout history records.
+- Implemented `InitialWorkoutSettings` class to hold static compile-time constants of default configuration values.
+
+### Changed
+- Migrated `HistoryScreen` to a `SignalWidget` to automatically refresh workout statistics and completed list upon session updates.
+- Subscribed history store to reactive SQLite tables via `watchAllHistories()`.
+
+### Fixed
+- Unified default store values with Freezed model defaults, fixing a mismatch where sound active switch displayed disabled while sound playbacks were enabled on first run.
+- Corrected timer engine transition checks (`_handleWorkTick` and `_handleRestTick`) to transition on the boundary tick, removing transition "dead ticks" that added extra seconds to saved history completed time.
+- Removed pause tick increments from `currentTimeCompleted` to prevent double-counting pauses in saved finished durations.
+
 ## 🔨 0.7.1 - 02/06/2026
 
 ### Added

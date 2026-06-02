@@ -156,10 +156,11 @@ class WorkoutEngineStore {
   }
 
   void _handleWorkTick() {
-    currentTimeCompleted.value++;
     if (currentTime.value > 0) {
       currentTime.value--;
-    } else {
+      currentTimeCompleted.value++;
+    }
+    if (currentTime.value == 0) {
       // Transition to rest interval
       isWorkTime.value = false;
       status.value = TimerStatus.resting;
@@ -169,10 +170,11 @@ class WorkoutEngineStore {
   }
 
   void _handleRestTick() {
-    currentTimeCompleted.value++;
     if (currentTime.value > 0) {
       currentTime.value--;
-    } else {
+      currentTimeCompleted.value++;
+    }
+    if (currentTime.value == 0) {
       // Transition to next set or complete
       if (currentSet.value >= _settingsStore.totalSets.value) {
         _completeSession();
@@ -188,7 +190,6 @@ class WorkoutEngineStore {
 
   void _handlePauseTick() {
     currentPause.value++;
-    currentTimeCompleted.value++;
   }
 
   void _completeSession() {
