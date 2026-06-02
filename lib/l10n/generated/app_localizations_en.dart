@@ -39,7 +39,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get buttonApplyConfiguration => 'Apply configuration';
 
   @override
-  String get buttonResetDatabase => 'Reset database';
+  String get buttonResetDatabase => 'Reset configuration';
 
   @override
   String get buttonChoose => 'Choose';
@@ -54,7 +54,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get toastTextConfigurationSaved => 'Configuration saved';
 
   @override
-  String get toastTextResetedDatabase => 'Database reseted';
+  String get toastTextResetedDatabase => 'Configuration reseted';
 
   @override
   String get titleSettingDescription => 'Manage your settings';
@@ -343,7 +343,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get buttonGetStarted => 'Get Started';
 
   @override
-  String get maintenanceDatabaseReloadFixtures => 'Database : reload fixtures';
+  String get maintenanceDatabaseReloadFixtures => 'Configuration : reload default configuration';
 
   @override
   String get maintenanceHistoryDeleteAllData => 'History : delete all history datas';

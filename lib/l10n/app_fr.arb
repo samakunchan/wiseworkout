@@ -39,7 +39,7 @@
   "@buttonApplyConfiguration": {
     "description": "Texte pour le bouton d'application de la configuration"
   },
-  "buttonResetDatabase": "Réinitialiser la base de données",
+  "buttonResetDatabase": "Réinitialiser la configuration",
   "@buttonResetDatabase": {
     "description": "Texte pour le bouton de réinitialisation de la base de données"
   },
@@ -59,7 +59,7 @@
   "@toastTextConfigurationSaved": {
     "description": "Texte pour le toast de succès: configuration enregistrée"
   },
-  "toastTextResetedDatabase": "Base de données réinitialisée",
+  "toastTextResetedDatabase": "Configuration réinitialisée",
   "@toastTextResetedDatabase": {
     "description": "Texte pour le toast de succès: base de données réinitialisée"
   },
@@ -398,7 +398,7 @@
   "@buttonGetStarted": {
     "description": "Texte pour le bouton Commencer"
   },
-  "maintenanceDatabaseReloadFixtures": "Base de données : recharger les données de test",
+  "maintenanceDatabaseReloadFixtures": "Configuration : recharger la configuration par défaut",
   "@maintenanceDatabaseReloadFixtures": {
     "description": "Label pour la section rechargement base de données"
   },

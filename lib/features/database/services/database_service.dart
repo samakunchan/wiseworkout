@@ -247,6 +247,28 @@ class AppDatabase extends _$AppDatabase {
     }
   }
 
+  Future<void> dumpPresetsForFixtures() async {
+    await transaction(() async {
+      await delete(preset).go();
+      await customUpdate(
+        'DELETE FROM sqlite_sequence WHERE name = ?',
+        variables: [Variable.withString(preset.entityName)],
+      );
+
+      await delete(bound).go();
+      await customUpdate(
+        'DELETE FROM sqlite_sequence WHERE name = ?',
+        variables: [Variable.withString(bound.entityName)],
+      );
+
+      await _loadFixtures();
+    });
+
+    if (kDebugMode) {
+      print('✅ Database presets reset to default fixtures.');
+    }
+  }
+
   Future<void> _loadFixtures() async {
     for (final PresetModel presetModel in kAllPresets) {
       if (kDebugMode) {

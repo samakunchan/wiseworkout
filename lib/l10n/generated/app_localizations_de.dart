@@ -39,7 +39,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get buttonApplyConfiguration => 'Konfiguration anwenden';
 
   @override
-  String get buttonResetDatabase => 'Datenbank zurücksetzen';
+  String get buttonResetDatabase => 'Konfiguration zurücksetzen';
 
   @override
   String get buttonChoose => 'Wählen';
@@ -54,7 +54,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get toastTextConfigurationSaved => 'Konfiguration gespeichert';
 
   @override
-  String get toastTextResetedDatabase => 'Datenbank zurückgesetzt';
+  String get toastTextResetedDatabase => 'Konfiguration zurückgesetzt';
 
   @override
   String get titleSettingDescription => 'Einstellungen verwalten';
@@ -343,7 +343,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get buttonGetStarted => 'Loslegen';
 
   @override
-  String get maintenanceDatabaseReloadFixtures => 'Datenbank: Testdaten neu laden';
+  String get maintenanceDatabaseReloadFixtures => 'Konfiguration: Standardkonfiguration neu laden';
 
   @override
   String get maintenanceHistoryDeleteAllData => 'Verlauf: Alle Verlaufsdaten löschen';
