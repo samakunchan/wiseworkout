@@ -68,7 +68,7 @@ dependencies:
   country_flags: ^4.1.0
 
   # Firebase
-  firebase_core: ^4.3.0
+  #firebase_core: ^4.3.0
 
   # Env
   flutter_dotenv: ^6.0.0
