@@ -1,6 +1,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:signals/signals.dart';
 import 'package:wiseworkout/core/themes/theme.dart';
 import 'package:wiseworkout/features/cache/services/cache_service.dart';
 import 'package:wiseworkout/features/di/services/service_locator.dart';
@@ -10,6 +11,10 @@ import 'package:wiseworkout/l10n/generated/app_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  /// Supprime les logs dans la console.
+  SignalsObserver.instance = null;
+
   setupLocator();
   await kGetIt<WorkoutSettingsStore>().loadFromCache(kGetIt<CacheService>());
 

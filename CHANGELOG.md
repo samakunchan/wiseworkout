@@ -1,5 +1,17 @@
 # CHANGELOG wiseworkout
 
+## 🔨 0.7.1 - 02/06/2026
+
+### Added
+- N/A
+
+### Changed
+- N/A
+
+### Fixed
+- Resolved a compile-time import error for `app_localizations.dart` by generating the localization files.
+- Fixed a runtime crash on Flutter Web (`Unsupported operation: _Namespace`) occurring when playing a sound multiple times, by clearing the internal `audioCache` before each playback to bypass the buggy `existsSync` check in the `audioplayers` package.
+
 ## 🚀 0.7.0 - 01/06/2026
 
 ### Added
