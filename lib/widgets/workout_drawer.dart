@@ -7,6 +7,7 @@ import 'package:wiseworkout/core/extensions/context_extension.dart';
 import 'package:wiseworkout/core/extensions/string_extension.dart';
 import 'package:wiseworkout/core/themes/constantes.dart';
 import 'package:wiseworkout/features/di/services/service_locator.dart';
+import 'package:wiseworkout/features/history/screens/monthly_summary_screen.dart';
 import 'package:wiseworkout/features/more/screens/about_us_screen.dart';
 import 'package:wiseworkout/features/settings/enums/enums.dart';
 import 'package:wiseworkout/features/settings/signals/locale_store.dart';
@@ -169,9 +170,12 @@ class WorkoutDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.query_stats, color: Theme.of(context).colorScheme.primary),
             title: Text(context.localizations.drawerMonthlySummaryText),
-            onTap: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(context.localizations.drawerMonthlySummaryText)),
+            onTap: () async {
+              await Navigator.push(
+                context,
+                MaterialPageRoute<void>(
+                  builder: (_) => const MonthlySummaryScreen(),
+                ),
               );
             },
           ),
