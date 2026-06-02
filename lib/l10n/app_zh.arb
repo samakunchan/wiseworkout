@@ -99,5 +99,14 @@
   "maintenanceToastHistoryDeleted": "历史记录已删除",
   "feedbackImprovementTitle": "帮助我们改进！",
   "feedbackHintText": "告诉我们更多...",
-  "feedbackSendButton": "发送"
+  "feedbackSendButton": "发送",
+  "onboardingSlide2Title": "定制您的节奏",
+  "onboardingSlide2Subtitle1": "设置适合您的运动时间、休息间隔和循环组数。",
+  "onboardingSlide2Subtitle2": "启用声音提示，并自由选择圆盘或经典计时器布局。",
+  "onboardingSlide3Title": "追踪您的进步",
+  "onboardingSlide3Subtitle1": "查看已完成的锻炼记录，轻松掌握每月统计数据。",
+  "onboardingSlide3Subtitle2": "分析您最高效的锻炼日，并保持每日专注连续记录。",
+  "buttonSkip": "跳过",
+  "drawerRelaunchOnboardingText": "快速导览",
+  "buttonNext": "下一步"
 }

@@ -362,4 +362,31 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get feedbackSendButton => '发送';
+
+  @override
+  String get onboardingSlide2Title => '定制您的节奏';
+
+  @override
+  String get onboardingSlide2Subtitle1 => '设置适合您的运动时间、休息间隔和循环组数。';
+
+  @override
+  String get onboardingSlide2Subtitle2 => '启用声音提示，并自由选择圆盘或经典计时器布局。';
+
+  @override
+  String get onboardingSlide3Title => '追踪您的进步';
+
+  @override
+  String get onboardingSlide3Subtitle1 => '查看已完成的锻炼记录，轻松掌握每月统计数据。';
+
+  @override
+  String get onboardingSlide3Subtitle2 => '分析您最高效的锻炼日，并保持每日专注连续记录。';
+
+  @override
+  String get buttonSkip => '跳过';
+
+  @override
+  String get drawerRelaunchOnboardingText => '快速导览';
+
+  @override
+  String get buttonNext => '下一步';
 }

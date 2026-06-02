@@ -362,4 +362,31 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get feedbackSendButton => 'Send';
+
+  @override
+  String get onboardingSlide2Title => 'Tailor Your Pace';
+
+  @override
+  String get onboardingSlide2Subtitle1 => 'Set your work, rest intervals, and number of sets to fit your style.';
+
+  @override
+  String get onboardingSlide2Subtitle2 => 'Toggle sound cues and choose between circular or classic timer layouts.';
+
+  @override
+  String get onboardingSlide3Title => 'Track Your Progress';
+
+  @override
+  String get onboardingSlide3Subtitle1 => 'Review your completed workout sessions and monitor monthly statistics.';
+
+  @override
+  String get onboardingSlide3Subtitle2 => 'Analyze your productive days and build your daily focus streak.';
+
+  @override
+  String get buttonSkip => 'Skip';
+
+  @override
+  String get drawerRelaunchOnboardingText => 'Quick Tour';
+
+  @override
+  String get buttonNext => 'Next';
 }

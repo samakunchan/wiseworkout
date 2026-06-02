@@ -99,5 +99,14 @@
   "maintenanceToastHistoryDeleted": "Datos de historial eliminados",
   "feedbackImprovementTitle": "¡Ayúdenos a mejorar!",
   "feedbackHintText": "Cuéntenos más...",
-  "feedbackSendButton": "Enviar"
+  "feedbackSendButton": "Enviar",
+  "onboardingSlide2Title": "Adapte su ritmo",
+  "onboardingSlide2Subtitle1": "Configure sus intervalos de trabajo, descanso y número de series.",
+  "onboardingSlide2Subtitle2": "Active las señales sonoras y elija el estilo de su temporizador.",
+  "onboardingSlide3Title": "Siga sus progresos",
+  "onboardingSlide3Subtitle1": "Revise sus sesiones completadas y controle las estadísticas mensuales.",
+  "onboardingSlide3Subtitle2": "Analice sus días más productivos y mantenga su racha de constancia.",
+  "buttonSkip": "Omitir",
+  "drawerRelaunchOnboardingText": "Visita guiada",
+  "buttonNext": "Siguiente"
 }

@@ -88,6 +88,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  shared_preferences_platform_interface: ^2.4.2
+
   # Builder
   build_runner: ^2.5.4
 
