@@ -109,6 +109,22 @@
   "@textSummarizeEndText": {
     "description": "Text for the summarize end text"
   },
+  "drawerHeaderPreferences": "Preferences",
+  "@drawerHeaderPreferences": {
+    "description": "Subheader for the preferences section in the drawer"
+  },
+  "drawerHeaderTools": "Tools",
+  "@drawerHeaderTools": {
+    "description": "Subheader for the tools section in the drawer"
+  },
+  "drawerHeaderSupport": "Support",
+  "@drawerHeaderSupport": {
+    "description": "Subheader for the support section in the drawer"
+  },
+  "drawerHeaderLegal": "Legal",
+  "@drawerHeaderLegal": {
+    "description": "Subheader for the legal section in the drawer"
+  },
   "drawerMonthlySummaryText": "Monthly summary",
   "@drawerMonthlySummaryText": {
     "description": "Text for the monthly summary drawer item"
