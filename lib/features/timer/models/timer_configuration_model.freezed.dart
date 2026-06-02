@@ -210,7 +210,7 @@ return $default(_that.workDuration,_that.restDuration,_that.numberOfSets,_that.u
 @JsonSerializable()
 
 class _TimerConfigurationModel implements TimerConfigurationModel {
-  const _TimerConfigurationModel({required this.workDuration, required this.restDuration, this.numberOfSets = 4, this.useCircularTimer = false, this.pauseDuration = 0, this.soundSelected = true, this.configName, this.presetId});
+  const _TimerConfigurationModel({required this.workDuration, required this.restDuration, this.numberOfSets = InitialWorkoutSettings.numberOfSets, this.useCircularTimer = InitialWorkoutSettings.useCircularTimer, this.pauseDuration = InitialWorkoutSettings.pauseDuration, this.soundSelected = InitialWorkoutSettings.soundSelected, this.configName, this.presetId});
   factory _TimerConfigurationModel.fromJson(Map<String, dynamic> json) => _$TimerConfigurationModelFromJson(json);
 
 @override final  int workDuration;

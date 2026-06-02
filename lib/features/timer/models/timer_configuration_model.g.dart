@@ -11,10 +11,17 @@ _TimerConfigurationModel _$TimerConfigurationModelFromJson(
 ) => _TimerConfigurationModel(
   workDuration: (json['workDuration'] as num).toInt(),
   restDuration: (json['restDuration'] as num).toInt(),
-  numberOfSets: (json['numberOfSets'] as num?)?.toInt() ?? 4,
-  useCircularTimer: json['useCircularTimer'] as bool? ?? false,
-  pauseDuration: (json['pauseDuration'] as num?)?.toInt() ?? 0,
-  soundSelected: json['soundSelected'] as bool? ?? true,
+  numberOfSets:
+      (json['numberOfSets'] as num?)?.toInt() ??
+      InitialWorkoutSettings.numberOfSets,
+  useCircularTimer:
+      json['useCircularTimer'] as bool? ??
+      InitialWorkoutSettings.useCircularTimer,
+  pauseDuration:
+      (json['pauseDuration'] as num?)?.toInt() ??
+      InitialWorkoutSettings.pauseDuration,
+  soundSelected:
+      json['soundSelected'] as bool? ?? InitialWorkoutSettings.soundSelected,
   configName: json['configName'] as String?,
   presetId: (json['presetId'] as num?)?.toInt(),
 );
