@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:wiseworkout/features/settings/models/initial_workout_settings.dart';
 
 part 'timer_configuration_model.freezed.dart';
 part 'timer_configuration_model.g.dart';
@@ -8,10 +9,10 @@ sealed class TimerConfigurationModel with _$TimerConfigurationModel {
   const factory TimerConfigurationModel({
     required int workDuration,
     required int restDuration,
-    @Default(4) int numberOfSets,
-    @Default(false) bool useCircularTimer,
-    @Default(0) int pauseDuration,
-    @Default(true) bool soundSelected,
+    @Default(InitialWorkoutSettings.numberOfSets) int numberOfSets,
+    @Default(InitialWorkoutSettings.useCircularTimer) bool useCircularTimer,
+    @Default(InitialWorkoutSettings.pauseDuration) int pauseDuration,
+    @Default(InitialWorkoutSettings.soundSelected) bool soundSelected,
     String? configName,
     int? presetId,
   }) = _TimerConfigurationModel;
@@ -20,14 +21,14 @@ sealed class TimerConfigurationModel with _$TimerConfigurationModel {
 
   static TimerConfigurationModel empty = TimerConfigurationModel.fromJson(
     <String, dynamic>{
-      'workDuration': 90,
-      'restDuration': 15,
-      'presetId': -1,
-      'numberOfSets': 8,
-      'useCircularTimer': false,
-      'pauseDuration': 0,
-      'soundSelected': true,
-      'configName': 'No config',
+      'workDuration': InitialWorkoutSettings.workDuration,
+      'restDuration': InitialWorkoutSettings.restDuration,
+      'presetId': InitialWorkoutSettings.presetId,
+      'numberOfSets': InitialWorkoutSettings.numberOfSets,
+      'useCircularTimer': InitialWorkoutSettings.useCircularTimer,
+      'pauseDuration': InitialWorkoutSettings.pauseDuration,
+      'soundSelected': InitialWorkoutSettings.soundSelected,
+      'configName': InitialWorkoutSettings.configName,
     },
   );
 }

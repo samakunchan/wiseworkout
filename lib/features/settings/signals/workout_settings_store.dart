@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:signals/signals.dart';
 import 'package:wiseworkout/features/cache/services/cache_service.dart';
+import 'package:wiseworkout/features/settings/models/initial_workout_settings.dart';
 import 'package:wiseworkout/features/timer/models/timer_configuration_model.dart';
 
 /// ============================================================================
@@ -17,19 +18,19 @@ import 'package:wiseworkout/features/timer/models/timer_configuration_model.dart
 class WorkoutSettingsStore {
   /// The duration (in seconds) of active work intervals.
   final Signal<int> workTime = Signal<int>(
-    90,
+    InitialWorkoutSettings.workDuration,
     options: const SignalOptions(name: ' WORK TIME '),
   );
 
   /// The duration (in seconds) of rest intervals.
   final Signal<int> restTime = Signal<int>(
-    15,
+    InitialWorkoutSettings.restDuration,
     options: const SignalOptions(name: ' REST TIME '),
   );
 
   /// The total number of sets planned for the workout.
   final Signal<int> totalSets = Signal<int>(
-    2,
+    InitialWorkoutSettings.numberOfSets,
     options: const SignalOptions(name: ' TOTAL SETS '),
   );
 
@@ -59,13 +60,13 @@ class WorkoutSettingsStore {
 
   /// Whether the UI utilizes a circular visual countdown representation.
   final Signal<bool> useCircularTimer = Signal<bool>(
-    false,
+    InitialWorkoutSettings.useCircularTimer,
     options: const SignalOptions(name: ' CIRCULAR TIMER '),
   );
 
   /// Tracks if audio signals are actively triggering/enabled.
   final Signal<bool> isSoundActive = Signal<bool>(
-    false,
+    InitialWorkoutSettings.soundSelected,
     options: const SignalOptions(name: ' SOUND ACTIVATING '),
   );
 
@@ -100,29 +101,30 @@ class WorkoutSettingsStore {
       }
     } else {
       // Default initial states if cache is empty
-      workTime.value = 90;
-      restTime.value = 15;
-      totalSets.value = 2;
-      useCircularTimer.value = false;
-      isSoundActive.value = false;
+      workTime.value = InitialWorkoutSettings.workDuration;
+      restTime.value = InitialWorkoutSettings.restDuration;
+      totalSets.value = InitialWorkoutSettings.numberOfSets;
+      useCircularTimer.value = InitialWorkoutSettings.useCircularTimer;
+      isSoundActive.value = InitialWorkoutSettings.soundSelected;
 
-      summarizeWorkTime.value = 90;
-      summarizeRestTime.value = 15;
-      summarizeSet.value = 2;
+      summarizeWorkTime.value = InitialWorkoutSettings.workDuration;
+      summarizeRestTime.value = InitialWorkoutSettings.restDuration;
+      summarizeSet.value = InitialWorkoutSettings.numberOfSets;
+      timerConf.value = TimerConfigurationModel.empty;
     }
   }
 
   /// Resets all settings configuration signals back to their factory default values.
   void reset() {
-    workTime.value = 90;
-    restTime.value = 15;
-    totalSets.value = 2;
+    workTime.value = InitialWorkoutSettings.workDuration;
+    restTime.value = InitialWorkoutSettings.restDuration;
+    totalSets.value = InitialWorkoutSettings.numberOfSets;
     numberOfSets.value = 1;
     summarizeSet.value = 0;
     summarizeWorkTime.value = 0;
     summarizeRestTime.value = 0;
-    useCircularTimer.value = false;
-    isSoundActive.value = false;
+    useCircularTimer.value = InitialWorkoutSettings.useCircularTimer;
+    isSoundActive.value = InitialWorkoutSettings.soundSelected;
     timerConf.value = TimerConfigurationModel.empty;
   }
 }
