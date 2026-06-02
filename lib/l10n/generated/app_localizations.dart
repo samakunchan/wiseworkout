@@ -158,7 +158,7 @@ abstract class AppLocalizations {
   /// Text for the button to reset database
   ///
   /// In en, this message translates to:
-  /// **'Reset database'**
+  /// **'Reset configuration'**
   String get buttonResetDatabase;
 
   /// Text for the button to choose
@@ -188,7 +188,7 @@ abstract class AppLocalizations {
   /// Text for the success toast message: reset database
   ///
   /// In en, this message translates to:
-  /// **'Database reseted'**
+  /// **'Configuration reseted'**
   String get toastTextResetedDatabase;
 
   /// Text for the title of the setting description
@@ -662,7 +662,7 @@ abstract class AppLocalizations {
   /// Label for database reload fixtures section
   ///
   /// In en, this message translates to:
-  /// **'Database : reload fixtures'**
+  /// **'Configuration : reload default configuration'**
   String get maintenanceDatabaseReloadFixtures;
 
   /// Label for history delete section

@@ -39,7 +39,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get buttonApplyConfiguration => 'Appliquer la configuration';
 
   @override
-  String get buttonResetDatabase => 'Réinitialiser la base de données';
+  String get buttonResetDatabase => 'Réinitialiser la configuration';
 
   @override
   String get buttonChoose => 'Choisir';
@@ -54,7 +54,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get toastTextConfigurationSaved => 'Configuration enregistrée';
 
   @override
-  String get toastTextResetedDatabase => 'Base de données réinitialisée';
+  String get toastTextResetedDatabase => 'Configuration réinitialisée';
 
   @override
   String get titleSettingDescription => 'Gérer vos paramètres';
@@ -343,7 +343,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get buttonGetStarted => 'Commencer';
 
   @override
-  String get maintenanceDatabaseReloadFixtures => 'Base de données : recharger les données de test';
+  String get maintenanceDatabaseReloadFixtures => 'Configuration : recharger la configuration par défaut';
 
   @override
   String get maintenanceHistoryDeleteAllData => 'Historique : supprimer l\'historique';
