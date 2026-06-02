@@ -710,6 +710,7 @@ class CompiledApp {
       _1591: (x0,x1) => x0.sqlite3_errstr(x1),
       _1592: x0 => x0.sqlite3_error_offset,
       _1596: (x0,x1) => x0.sqlite3_last_insert_rowid(x1),
+      _1597: (x0,x1) => x0.sqlite3_changes(x1),
       _1598: (x0,x1,x2,x3,x4,x5) => x0.sqlite3_exec(x1,x2,x3,x4,x5),
       _1601: (x0,x1,x2,x3,x4,x5,x6) => x0.sqlite3_prepare_v3(x1,x2,x3,x4,x5,x6),
       _1602: (x0,x1) => x0.sqlite3_finalize(x1),
