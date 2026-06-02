@@ -251,6 +251,30 @@ abstract class AppLocalizations {
   /// **' for the session.'**
   String get textSummarizeEndText;
 
+  /// Subheader for the preferences section in the drawer
+  ///
+  /// In en, this message translates to:
+  /// **'Preferences'**
+  String get drawerHeaderPreferences;
+
+  /// Subheader for the tools section in the drawer
+  ///
+  /// In en, this message translates to:
+  /// **'Tools'**
+  String get drawerHeaderTools;
+
+  /// Subheader for the support section in the drawer
+  ///
+  /// In en, this message translates to:
+  /// **'Support'**
+  String get drawerHeaderSupport;
+
+  /// Subheader for the legal section in the drawer
+  ///
+  /// In en, this message translates to:
+  /// **'Legal'**
+  String get drawerHeaderLegal;
+
   /// Text for the monthly summary drawer item
   ///
   /// In en, this message translates to:

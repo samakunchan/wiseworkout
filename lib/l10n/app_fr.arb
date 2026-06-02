@@ -109,6 +109,22 @@
   "@textSummarizeEndText": {
     "description": "Texte pour la fin du récapitulatif"
   },
+  "drawerHeaderPreferences": "Préférences",
+  "@drawerHeaderPreferences": {
+    "description": "Sous-titre pour la section des préférences dans le tiroir"
+  },
+  "drawerHeaderTools": "Outils",
+  "@drawerHeaderTools": {
+    "description": "Sous-titre pour la section des outils dans le tiroir"
+  },
+  "drawerHeaderSupport": "Support",
+  "@drawerHeaderSupport": {
+    "description": "Sous-titre pour la section de support dans le tiroir"
+  },
+  "drawerHeaderLegal": "Légal",
+  "@drawerHeaderLegal": {
+    "description": "Sous-titre pour la section légale dans le tiroir"
+  },
   "drawerMonthlySummaryText": "Résumé mensuel",
   "@drawerMonthlySummaryText": {
     "description": "Texte pour le Résumé mensuel"

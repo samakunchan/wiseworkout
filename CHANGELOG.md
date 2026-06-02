@@ -1,6 +1,25 @@
 # CHANGELOG wiseworkout
 
+## 🚀 0.9.0 - 02/06/2026
+
+### Added
+- Created `WorkoutAppBar` centering the logo and providing settings navigation.
+- Created `WorkoutDrawer` with grouped categories under translated headers.
+- Implemented `ScreenScaffoldWithDrawer` and `ScreenScaffold` layouts under `lib/layout/` to manage page-level scaffolds.
+- Created `ThemeModeStore` and `LocaleStore` to manage and cache signals-based theme/language preferences.
+- Ported `AboutUsScreen` feature page into `lib/features/more/screens/about_us_screen.dart` under the new unified `/lib/features/more/` feature directory.
+- Added translated section headers (Preferences, Tools, Support, Legal) to English, French, German, Spanish, and Chinese `.arb` files.
+
+### Changed
+- Wrapped `MaterialApp` with `SignalBuilder` in `main.dart` to rebuild theme and locale dynamically.
+- Removed duplicate settings navigation button from `TimerScreen` as it is now in the global AppBar.
+- Disabled and added a red `"disabled for this demo"` badge on the Web environment for *Authorizations*, *Rate on the store*, *Privacy policy*, and *Terms of service* drawer tiles.
+
+### Fixed
+- Fixed `discarded_futures` linter warnings in the drawer callbacks by awaiting the asynchronous navigator transitions.
+
 ## 🚀 0.8.0 - 02/06/2026
+
 
 ### Added
 - Created a dedicated `WorkoutHistoryStore` to manage reactive streams of completed workout history records.

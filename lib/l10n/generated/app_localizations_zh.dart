@@ -101,6 +101,18 @@ class AppLocalizationsZh extends AppLocalizations {
   String get textSummarizeEndText => ' 本次训练结束。';
 
   @override
+  String get drawerHeaderPreferences => '首选项';
+
+  @override
+  String get drawerHeaderTools => '工具';
+
+  @override
+  String get drawerHeaderSupport => '支持';
+
+  @override
+  String get drawerHeaderLegal => '法律';
+
+  @override
   String get drawerMonthlySummaryText => '月度总结';
 
   @override
