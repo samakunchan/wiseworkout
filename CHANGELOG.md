@@ -1,5 +1,20 @@
 # CHANGELOG wiseworkout
 
+## 🚀 0.10.0 - 02/06/2026
+
+### Added
+- Ported the Monthly Summary screen (`MonthlySummaryScreen`) and its sub-widgets (`CardActivity`, `WorkoutBarChart`, `CardGraphDailySession`) to visualize month-to-date workout summary and statistics under `lib/features/history/`.
+- Ported the Maintenance screen (`MaintenanceScreen`) under `lib/features/more/` to provide reset options.
+
+### Changed
+- Renamed "Reset database" to "Reset configuration" in English, French, German, Spanish, and Chinese localizations.
+- Replaced the deprecated `Watch` widget with `SignalBuilder` in the Monthly Summary screen.
+- Integrated the new screens into the global drawer (`WorkoutDrawer`) navigation stack.
+
+### Fixed
+- Fixed resetting logic on the Maintenance screen to call `dumpPresetsForFixtures()` instead of `dumpDatabaseForFixtures()`, preserving the workout history entries when clearing settings configurations.
+- Fixed main timer page state updates by triggering active `WorkoutEngineStore.reset()` when settings/configurations are reset in the maintenance page.
+
 ## 🚀 0.9.0 - 02/06/2026
 
 ### Added

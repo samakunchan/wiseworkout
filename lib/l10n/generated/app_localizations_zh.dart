@@ -39,7 +39,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get buttonApplyConfiguration => '应用配置';
 
   @override
-  String get buttonResetDatabase => '重置数据库';
+  String get buttonResetDatabase => '重置配置';
 
   @override
   String get buttonChoose => '选择';
@@ -54,7 +54,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get toastTextConfigurationSaved => '配置已保存';
 
   @override
-  String get toastTextResetedDatabase => '数据库已重置';
+  String get toastTextResetedDatabase => '配置已重置';
 
   @override
   String get titleSettingDescription => '管理您的设置';
@@ -343,7 +343,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get buttonGetStarted => '立即开始';
 
   @override
-  String get maintenanceDatabaseReloadFixtures => '数据库：重新加载测试数据';
+  String get maintenanceDatabaseReloadFixtures => '配置：重新加载默认配置';
 
   @override
   String get maintenanceHistoryDeleteAllData => '历史：清除所有历史记录';

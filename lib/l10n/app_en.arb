@@ -39,7 +39,7 @@
   "@buttonApplyConfiguration": {
     "description": "Text for the button to apply configuration"
   },
-  "buttonResetDatabase": "Reset database",
+  "buttonResetDatabase": "Reset configuration",
   "@buttonResetDatabase": {
     "description": "Text for the button to reset database"
   },
@@ -59,7 +59,7 @@
   "@toastTextConfigurationSaved": {
     "description": "Text for the success toast message : configuration saved"
   },
-  "toastTextResetedDatabase": "Database reseted",
+  "toastTextResetedDatabase": "Configuration reseted",
   "@toastTextResetedDatabase": {
     "description": "Text for the success toast message: reset database"
   },
@@ -398,7 +398,7 @@
   "@buttonGetStarted": {
     "description": "Text for the Get Started button"
   },
-  "maintenanceDatabaseReloadFixtures": "Database : reload fixtures",
+  "maintenanceDatabaseReloadFixtures": "Configuration : reload default configuration",
   "@maintenanceDatabaseReloadFixtures": {
     "description": "Label for database reload fixtures section"
   },
