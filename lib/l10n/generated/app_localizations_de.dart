@@ -362,4 +362,31 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get feedbackSendButton => 'Senden';
+
+  @override
+  String get onboardingSlide2Title => 'Passen Sie Ihr Tempo an';
+
+  @override
+  String get onboardingSlide2Subtitle1 => 'Stellen Sie Ihre Arbeits- und Ruhezeiten sowie die Anzahl der Sätze ein.';
+
+  @override
+  String get onboardingSlide2Subtitle2 => 'Schalten Sie Tonsignale ein und wählen Sie das Layout Ihres Timers.';
+
+  @override
+  String get onboardingSlide3Title => 'Verfolgen Sie Ihre Fortschritte';
+
+  @override
+  String get onboardingSlide3Subtitle1 => 'Überprüfen Sie Ihre Trainingseinheiten und überwachen Sie die Monatsstatistiken.';
+
+  @override
+  String get onboardingSlide3Subtitle2 => 'Analysieren Sie Ihre produktivsten Tage und steigern Sie Ihre Konstanz.';
+
+  @override
+  String get buttonSkip => 'Überspringen';
+
+  @override
+  String get drawerRelaunchOnboardingText => 'Schnelle Tour';
+
+  @override
+  String get buttonNext => 'Weiter';
 }

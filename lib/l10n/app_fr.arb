@@ -425,5 +425,41 @@
   "feedbackSendButton": "Envoyer",
   "@feedbackSendButton": {
     "description": "Texte du bouton envoyer le feedback"
+  },
+  "onboardingSlide2Title": "Rythmez votre séance",
+  "@onboardingSlide2Title": {
+    "description": "Titre du slide 2 de l'onboarding"
+  },
+  "onboardingSlide2Subtitle1": "Configurez vos temps d'effort, de repos et le nombre de séries.",
+  "@onboardingSlide2Subtitle1": {
+    "description": "Sous-titre 1 du slide 2 de l'onboarding"
+  },
+  "onboardingSlide2Subtitle2": "Activez les alertes sonores et choisissez le style de votre chronomètre.",
+  "@onboardingSlide2Subtitle2": {
+    "description": "Sous-titre 2 du slide 2 de l'onboarding"
+  },
+  "onboardingSlide3Title": "Suivez vos progrès",
+  "@onboardingSlide3Title": {
+    "description": "Titre du slide 3 de l'onboarding"
+  },
+  "onboardingSlide3Subtitle1": "Consultez l'historique de vos séances et suivez vos statistiques mensuelles.",
+  "@onboardingSlide3Subtitle1": {
+    "description": "Sous-titre 1 du slide 3 de l'onboarding"
+  },
+  "onboardingSlide3Subtitle2": "Analysez vos jours les plus productifs et maintenez votre régularité.",
+  "@onboardingSlide3Subtitle2": {
+    "description": "Sous-titre 2 du slide 3 de l'onboarding"
+  },
+  "buttonSkip": "Passer",
+  "@buttonSkip": {
+    "description": "Texte du bouton passer"
+  },
+  "drawerRelaunchOnboardingText": "Visite guidée",
+  "@drawerRelaunchOnboardingText": {
+    "description": "Texte pour relancer l'onboarding dans le tiroir"
+  },
+  "buttonNext": "Suivant",
+  "@buttonNext": {
+    "description": "Texte pour le bouton Suivant"
   }
 }

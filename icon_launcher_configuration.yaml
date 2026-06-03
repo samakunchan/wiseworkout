@@ -1,0 +1,12 @@
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  remove_alpha_ios: true
+  image_path: "assets/common/logo.png"
+  min_sdk_android: 21
+  adaptive_icon_background: "#FFEEDD"
+  adaptive_icon_foreground: "assets/common/logo.png"
+  windows:
+    generate: true
+    image_path: "assets/common/logo.png"
+    icon_size: 48

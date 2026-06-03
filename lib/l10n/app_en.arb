@@ -425,5 +425,41 @@
   "feedbackSendButton": "Send",
   "@feedbackSendButton": {
     "description": "Text for the send feedback button"
+  },
+  "onboardingSlide2Title": "Tailor Your Pace",
+  "@onboardingSlide2Title": {
+    "description": "Title of onboarding slide 2"
+  },
+  "onboardingSlide2Subtitle1": "Set your work, rest intervals, and number of sets to fit your style.",
+  "@onboardingSlide2Subtitle1": {
+    "description": "Subtitle 1 of onboarding slide 2"
+  },
+  "onboardingSlide2Subtitle2": "Toggle sound cues and choose between circular or classic timer layouts.",
+  "@onboardingSlide2Subtitle2": {
+    "description": "Subtitle 2 of onboarding slide 2"
+  },
+  "onboardingSlide3Title": "Track Your Progress",
+  "@onboardingSlide3Title": {
+    "description": "Title of onboarding slide 3"
+  },
+  "onboardingSlide3Subtitle1": "Review your completed workout sessions and monitor monthly statistics.",
+  "@onboardingSlide3Subtitle1": {
+    "description": "Subtitle 1 of onboarding slide 3"
+  },
+  "onboardingSlide3Subtitle2": "Analyze your productive days and build your daily focus streak.",
+  "@onboardingSlide3Subtitle2": {
+    "description": "Subtitle 2 of onboarding slide 3"
+  },
+  "buttonSkip": "Skip",
+  "@buttonSkip": {
+    "description": "Text for skip button"
+  },
+  "drawerRelaunchOnboardingText": "Quick Tour",
+  "@drawerRelaunchOnboardingText": {
+    "description": "Text for relaunching onboarding in the drawer"
+  },
+  "buttonNext": "Next",
+  "@buttonNext": {
+    "description": "Text for the Next button"
   }
 }

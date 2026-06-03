@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:wiseworkout/core/extensions/context_extension.dart';
+import 'package:wiseworkout/features/feedback/widgets/feedback_button.dart';
 import 'package:wiseworkout/features/settings/enums/enums.dart';
 import 'package:wiseworkout/features/settings/widgets/timer_setup_clickable_unit.dart';
 import 'package:wiseworkout/features/settings/widgets/timer_setup_numeric_pad.dart';
@@ -58,7 +59,13 @@ class _TimerSetUpScreenState extends State<TimerSetUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.transparent, elevation: 0),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: const [
+          FeedbackButton(labels: ['timer_setup']),
+        ],
+      ),
       body: Column(
         children: [
           const Spacer(),

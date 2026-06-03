@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wiseworkout/core/extensions/context_extension.dart';
 import 'package:wiseworkout/core/themes/constantes.dart';
+import 'package:wiseworkout/features/feedback/widgets/feedback_button.dart';
 import 'package:wiseworkout/features/settings/widgets/setting_header.dart';
 import 'package:wiseworkout/features/settings/widgets/setting_save_button.dart';
 import 'package:wiseworkout/features/settings/widgets/setting_sets_buttons.dart';
@@ -17,6 +18,9 @@ class SettingsScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(context.localizations.titleSettingScreen),
         surfaceTintColor: Colors.transparent,
+        actions: const [
+          FeedbackButton(labels: ['settings']),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(kDefaultSpacing),
