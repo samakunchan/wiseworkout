@@ -9,6 +9,7 @@ import 'package:wiseworkout/core/themes/constantes.dart';
 import 'package:wiseworkout/core/themes/theme.dart';
 import 'package:wiseworkout/features/cache/services/cache_service.dart';
 import 'package:wiseworkout/features/di/services/service_locator.dart';
+import 'package:wiseworkout/features/feedback/signals/feed_back_store.dart';
 import 'package:wiseworkout/features/helpers.dart';
 import 'package:wiseworkout/features/onboarding/screens/onboarding_screen.dart';
 import 'package:wiseworkout/features/onboarding/signals/onboarding_store.dart';
@@ -91,7 +92,9 @@ class _MyAppState extends State<MyApp> {
                         controller: _pageController,
                         scrollDirection: .vertical,
                         itemCount: screens.length,
-                        onPageChanged: (_) {},
+                        onPageChanged: (int index) {
+                          kGetIt<FeedBackStore>().updatePage(index);
+                        },
                         itemBuilder: itemBuilder,
                       ),
                     ),
@@ -103,14 +106,9 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
-List<String> feedbackTypes = <String>['bug', 'enhancement', 'other'];
 String feedbackType = feedbackTypes.first;
 
-Widget customFeedbackBuilder(
-  BuildContext context,
-  OnSubmit onSubmit,
-  ScrollController? scrollController,
-) {
+Widget customFeedbackBuilder(BuildContext context, OnSubmit onSubmit, ScrollController? scrollController) {
   String feedbackText = '';
   bool isLoading = false;
 

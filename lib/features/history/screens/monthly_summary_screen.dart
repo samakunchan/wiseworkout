@@ -34,116 +34,118 @@ class MonthlySummaryScreen extends StatelessWidget {
 
     return ScreenScaffold(
       title: context.localizations.textSummaryMonthly,
+      feedbackLabels: const ['drawer', 'monthly_summary'],
       child: Padding(
         padding: const EdgeInsets.all(kDefaultSpacing),
         child: SignalBuilder(
           builder: (BuildContext context) {
             final List<WorkoutHistoryModel> histories = historyStore.histories.value;
-          final List<WorkoutHistoryModel> currentMonthHistory = histories.filteredByCurrentMonth();
-          final Map<String, int> dailyCounts = currentMonthHistory.countSessionsPerDayInCurrentWeek();
-          final Map<String, int> monthlyCounts = currentMonthHistory.countSessionsPerDayInCurrentMonth();
-          final int streak = currentMonthHistory.findLongestStreakInCurrentMonth();
-          final int mostProductiveMonthlySession = monthlyCounts.values.toList().reduce(max);
+            final List<WorkoutHistoryModel> currentMonthHistory = histories.filteredByCurrentMonth();
+            final Map<String, int> dailyCounts = currentMonthHistory.countSessionsPerDayInCurrentWeek();
+            final Map<String, int> monthlyCounts = currentMonthHistory.countSessionsPerDayInCurrentMonth();
+            final int streak = currentMonthHistory.findLongestStreakInCurrentMonth();
+            final int mostProductiveMonthlySession = monthlyCounts.values.toList().reduce(max);
 
-          /// Most productive day
-          bool mostProductiveSessionFiltered(MapEntry<String, int> entry) => entry.value == mostProductiveMonthlySession;
+            /// Most productive day
+            bool mostProductiveSessionFiltered(MapEntry<String, int> entry) => entry.value == mostProductiveMonthlySession;
 
-          final int dayOfMostProductiveSession = int.parse(
-            monthlyCounts.entries.toList().where(mostProductiveSessionFiltered).first.key,
-          );
+            final int dayOfMostProductiveSession = int.parse(
+              monthlyCounts.entries.toList().where(mostProductiveSessionFiltered).first.key,
+            );
 
-          /// All totals
-          final int totalSessionCompleted = currentMonthHistory.length;
-          final int totalBreakCompleted = currentMonthHistory
-              .map((WorkoutHistoryModel h) => h.pause)
-              .fold(0, (int a, int b) => a + b);
-          final int totalSecondsCompleted = currentMonthHistory
-              .map((WorkoutHistoryModel h) => h.timerCompleted)
-              .fold(0, (int a, int b) => a + b);
-          final String totalAverageSession = currentMonthHistory.calculateAverageSessionTime();
+            /// All totals
+            final int totalSessionCompleted = currentMonthHistory.length;
+            final int totalBreakCompleted = currentMonthHistory
+                .map((WorkoutHistoryModel h) => h.pause)
+                .fold(0, (int a, int b) => a + b);
+            final int totalSecondsCompleted = currentMonthHistory
+                .map((WorkoutHistoryModel h) => h.timerCompleted)
+                .fold(0, (int a, int b) => a + b);
+            final String totalAverageSession = currentMonthHistory.calculateAverageSessionTime();
 
-          /// Date parsed
-          final DateFormat dateFormat = DateFormat.yMMMM(Localizations.localeOf(context).toString());
-          final DateTime parsedDate = DateTime.parse(DateTime.now().toString());
+            /// Date parsed
+            final DateFormat dateFormat = DateFormat.yMMMM(Localizations.localeOf(context).toString());
+            final DateTime parsedDate = DateTime.parse(DateTime.now().toString());
 
-          return ListView(
-            children: [
-              Column(
-                crossAxisAlignment: .stretch,
-                spacing: kDefaultSpacing,
-                children: [
-                  /// Current Month
-                  Text(dateFormat.format(parsedDate).ucFirst(), style: Theme.of(context).textTheme.bodyMedium),
+            return ListView(
+              children: [
+                Column(
+                  crossAxisAlignment: .stretch,
+                  spacing: kDefaultSpacing,
+                  children: [
+                    /// Current Month
+                    Text(dateFormat.format(parsedDate).ucFirst(), style: Theme.of(context).textTheme.bodyMedium),
 
-                  /// Total Session + Total Focus Time
-                  Row(
-                    spacing: 10,
-                    children: [
-                      /// Total Session
-                      Expanded(
-                        child: CardSummary(
-                          title: context.localizations.textTotalSessions,
-                          currentResult: '$totalSessionCompleted',
+                    /// Total Session + Total Focus Time
+                    Row(
+                      spacing: 10,
+                      children: [
+                        /// Total Session
+                        Expanded(
+                          child: CardSummary(
+                            title: context.localizations.textTotalSessions,
+                            currentResult: '$totalSessionCompleted',
+                          ),
                         ),
-                      ),
 
-                      /// Total Focus Time
-                      Expanded(
-                        child: CardSummary(
-                          title: context.localizations.textTotalTime,
-                          currentResult: totalSecondsCompleted.formateTimeExtended(),
+                        /// Total Focus Time
+                        Expanded(
+                          child: CardSummary(
+                            title: context.localizations.textTotalTime,
+                            currentResult: totalSecondsCompleted.formateTimeExtended(),
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
+                      ],
+                    ),
 
-                  /// Average Session
-                  CardSummary(title: context.localizations.textAverageSession, currentResult: totalAverageSession),
+                    /// Average Session
+                    CardSummary(title: context.localizations.textAverageSession, currentResult: totalAverageSession),
 
-                  /// Daily Session
-                  CardGraphDailySession(title: context.localizations.textDailySessions, dailyCounts: dailyCounts),
+                    /// Daily Session
+                    CardGraphDailySession(title: context.localizations.textDailySessions, dailyCounts: dailyCounts),
 
-                  /// Activity Break down
-                  Column(
-                    spacing: 3,
-                    crossAxisAlignment: .start,
-                    children: [
-                      /// Activity Breakdown
-                      Text(context.localizations.textActivityBreakdown, style: Theme.of(context).textTheme.headlineSmall),
+                    /// Activity Break down
+                    Column(
+                      spacing: 3,
+                      crossAxisAlignment: .start,
+                      children: [
+                        /// Activity Breakdown
+                        Text(context.localizations.textActivityBreakdown, style: Theme.of(context).textTheme.headlineSmall),
 
-                      /// Most Productive Day
-                      CardActivity(
-                        title: context.localizations.textMostProductiveDay,
-                        subTitle: getDayNameByNumber(context, dayOfMostProductiveSession),
-                        icon: Icons.calendar_month,
-                        color: Colors.blueGrey,
-                        currentResult: context.localizations.textNSession(mostProductiveMonthlySession),
-                      ),
+                        /// Most Productive Day
+                        CardActivity(
+                          title: context.localizations.textMostProductiveDay,
+                          subTitle: getDayNameByNumber(context, dayOfMostProductiveSession),
+                          icon: Icons.calendar_month,
+                          color: Colors.blueGrey,
+                          currentResult: context.localizations.textNSession(mostProductiveMonthlySession),
+                        ),
 
-                      /// Longest Streak
-                      CardActivity(
-                        title: context.localizations.textLongestStreak,
-                        subTitle: context.localizations.textLongestStreakDescription,
-                        icon: Icons.fireplace,
-                        color: Colors.green,
-                        currentResult: context.localizations.textNDay(streak), // Pour le mois en cours
-                      ),
+                        /// Longest Streak
+                        CardActivity(
+                          title: context.localizations.textLongestStreak,
+                          subTitle: context.localizations.textLongestStreakDescription,
+                          icon: Icons.fireplace,
+                          color: Colors.green,
+                          currentResult: context.localizations.textNDay(streak), // Pour le mois en cours
+                        ),
 
-                      /// Breaks Taken
-                      CardActivity(
-                        title: context.localizations.textBreaksTaken,
-                        subTitle: context.localizations.textBreaksTakenDescription,
-                        icon: Icons.coffee,
-                        color: Colors.blueGrey,
-                        currentResult: '$totalBreakCompleted', // Pour le mois en cours
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ],
-          );
-        }),
+                        /// Breaks Taken
+                        CardActivity(
+                          title: context.localizations.textBreaksTaken,
+                          subTitle: context.localizations.textBreaksTakenDescription,
+                          icon: Icons.coffee,
+                          color: Colors.blueGrey,
+                          currentResult: '$totalBreakCompleted', // Pour le mois en cours
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            );
+          },
+        ),
       ),
     );
   }

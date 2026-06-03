@@ -2,6 +2,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:get_it/get_it.dart';
 import 'package:wiseworkout/features/cache/services/cache_service.dart';
 import 'package:wiseworkout/features/database/services/database_service.dart';
+import 'package:wiseworkout/features/feedback/signals/feed_back_store.dart';
 import 'package:wiseworkout/features/history/signals/workout_history_store.dart';
 import 'package:wiseworkout/features/onboarding/signals/onboarding_store.dart';
 import 'package:wiseworkout/features/settings/signals/locale_store.dart';
@@ -23,5 +24,6 @@ void setupLocator() {
     ..registerLazySingleton<LocaleStore>(() => LocaleStore(kGetIt<CacheService>()))
     ..registerLazySingleton<WorkoutEngineStore>(() => WorkoutEngineStore(kGetIt<WorkoutSettingsStore>()))
     ..registerLazySingleton<WorkoutHistoryStore>(() => WorkoutHistoryStore(kGetIt<AppDatabase>()))
-    ..registerLazySingleton<OnboardingStore>(() => OnboardingStore(kGetIt<CacheService>()));
+    ..registerLazySingleton<OnboardingStore>(() => OnboardingStore(kGetIt<CacheService>()))
+    ..registerLazySingleton<FeedBackStore>(FeedBackStore.new);
 }

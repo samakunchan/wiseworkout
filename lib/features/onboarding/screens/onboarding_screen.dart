@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wiseworkout/core/extensions/context_extension.dart';
 import 'package:wiseworkout/core/themes/constantes.dart';
 import 'package:wiseworkout/features/di/services/service_locator.dart';
+import 'package:wiseworkout/features/feedback/widgets/feedback_button.dart';
 import 'package:wiseworkout/features/onboarding/signals/onboarding_store.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -54,15 +55,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               )
             : null,
         actions: [
+          const FeedbackButton(labels: ['onboarding']),
           if (_currentPage < slides.length - 1)
             TextButton(
               onPressed: _complete,
               child: Text(
                 context.localizations.buttonSkip,
-                style: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
-                  fontWeight: .bold,
-                ),
+                style: TextStyle(color: Theme.of(context).colorScheme.primary, fontWeight: .bold),
               ),
             ),
         ],
@@ -101,7 +100,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               const SizedBox(height: 32),
               // Next/Get Started Button
               SizedBox(
-                width: double.infinity,
+                width: .infinity,
                 child: ElevatedButton(
                   onPressed: () async {
                     if (_currentPage < slides.length - 1) {
@@ -114,9 +113,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     }
                   },
                   child: Text(
-                    _currentPage == slides.length - 1
-                        ? context.localizations.buttonGetStarted
-                        : context.localizations.buttonNext,
+                    _currentPage == slides.length - 1 ? context.localizations.buttonGetStarted : context.localizations.buttonNext,
                   ),
                 ),
               ),
@@ -239,7 +236,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     text: context.localizations.welcomeScreenTitleHighlight,
                     style: const TextStyle(
                       color: kPrimaryOrange,
-                      fontStyle: FontStyle.italic,
+                      fontStyle: .italic,
                     ),
                   ),
                   TextSpan(

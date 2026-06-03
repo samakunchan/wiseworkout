@@ -10,6 +10,7 @@ class AboutUsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenScaffold(
       title: context.localizations.drawerAboutUsText,
+      feedbackLabels: const ['drawer', 'about_us'],
       child: const Center(
         child: Padding(
           padding: EdgeInsets.all(kDefaultSpacing),

@@ -9,57 +9,44 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:intl/intl.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
-class FeedbackButton extends StatelessWidget {
-  const FeedbackButton({super.key, this.labels = const []});
-  final List<String> labels;
-
-  @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      icon: const Icon(Icons.bug_report),
-      onPressed: () {
-        BetterFeedback.of(context).show((UserFeedback feedback) => _submitFeedback(context, feedback, labels));
-      },
-    );
-  }
-
-  Future<void> _submitFeedback(BuildContext context, UserFeedback feedback, List<String> labels) async {
+class FeedbackService {
+  static Future<void> submitFeedback(BuildContext context, UserFeedback feedback, List<String> labels) async {
     try {
       final String nextcloudUrl = dotenv.get('NEXTCLOUD_URL');
       final String username = dotenv.get('NEXTCLOUD_USER');
       final String password = dotenv.get('NEXTCLOUD_PASSWORD');
       final String uploadPath = dotenv.get('NEXTCLOUD_UPLOAD_PATH');
-      final String githubRepoUrl = dotenv.get('GITHUB_REPO_URL');
-      final String githubToken = dotenv.get('GITHUB_ISSUE_TOKEN');
+      // final String githubRepoUrl = dotenv.get('GITHUB_REPO_URL');
+      // final String githubToken = dotenv.get('GITHUB_ISSUE_TOKEN');
 
       // Gather Device & Package Info
       final PackageInfo packageInfo = await PackageInfo.fromPlatform();
       final DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
       String deviceDescription = '';
       String deviceModel = 'unknown';
-      String labelPlatform = 'unknown';
+      // String labelPlatform = 'unknown';
 
       if (kIsWeb) {
         final WebBrowserInfo webBrowserInfo = await deviceInfo.webBrowserInfo;
         deviceModel = webBrowserInfo.browserName.name;
         deviceDescription = 'Web: $deviceModel ${webBrowserInfo.appVersion}';
-        labelPlatform = 'web';
+        // labelPlatform = 'web';
       } else {
         if (Platform.isAndroid) {
           final AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
           deviceModel = '${androidInfo.manufacturer}-${androidInfo.model}';
           deviceDescription = 'Android: ${androidInfo.manufacturer} ${androidInfo.model} (SDK ${androidInfo.version.sdkInt})';
-          labelPlatform = 'android';
+          // labelPlatform = 'android';
         } else if (Platform.isIOS) {
           final IosDeviceInfo iosInfo = await deviceInfo.iosInfo;
           deviceModel = iosInfo.utsname.machine;
           deviceDescription = 'iOS: ${iosInfo.name} ${iosInfo.systemName} ${iosInfo.systemVersion} ($deviceModel)';
-          labelPlatform = 'ios';
+          // labelPlatform = 'ios';
         } else if (Platform.isMacOS) {
           final MacOsDeviceInfo macOsInfo = await deviceInfo.macOsInfo;
           deviceModel = macOsInfo.model;
           deviceDescription = 'macOS: $deviceModel ${macOsInfo.osRelease}';
-          labelPlatform = 'macos';
+          // labelPlatform = 'macos';
         } else {
           deviceDescription = 'Unknown Platform';
         }
@@ -75,6 +62,7 @@ class FeedbackButton extends StatelessWidget {
 | **Version** | ${packageInfo.version} |
 | **Build Number** | ${packageInfo.buildNumber} |
 | **Device** | $deviceDescription |
+| **Feedback is from** | ${labels.map((String label) => '${labels.last == label ? label : '$label,'} ').toList()} |
 ''';
 
       // Format Filename: [YYYYMMDD]-feedback-[deviceDescription].png
@@ -90,6 +78,8 @@ class FeedbackButton extends StatelessWidget {
 
       if (kDebugMode) {
         print(appInfoSection);
+        print(basicAuth);
+        print(fullUploadPath);
       }
       // final http.Response uploadResponse = await http.put(
       //   Uri.parse(fullUploadPath),
