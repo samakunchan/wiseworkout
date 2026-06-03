@@ -700,6 +700,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Send'**
   String get feedbackSendButton;
+
+  /// Title of onboarding slide 2
+  ///
+  /// In en, this message translates to:
+  /// **'Tailor Your Pace'**
+  String get onboardingSlide2Title;
+
+  /// Subtitle 1 of onboarding slide 2
+  ///
+  /// In en, this message translates to:
+  /// **'Set your work, rest intervals, and number of sets to fit your style.'**
+  String get onboardingSlide2Subtitle1;
+
+  /// Subtitle 2 of onboarding slide 2
+  ///
+  /// In en, this message translates to:
+  /// **'Toggle sound cues and choose between circular or classic timer layouts.'**
+  String get onboardingSlide2Subtitle2;
+
+  /// Title of onboarding slide 3
+  ///
+  /// In en, this message translates to:
+  /// **'Track Your Progress'**
+  String get onboardingSlide3Title;
+
+  /// Subtitle 1 of onboarding slide 3
+  ///
+  /// In en, this message translates to:
+  /// **'Review your completed workout sessions and monitor monthly statistics.'**
+  String get onboardingSlide3Subtitle1;
+
+  /// Subtitle 2 of onboarding slide 3
+  ///
+  /// In en, this message translates to:
+  /// **'Analyze your productive days and build your daily focus streak.'**
+  String get onboardingSlide3Subtitle2;
+
+  /// Text for skip button
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get buttonSkip;
+
+  /// Text for relaunching onboarding in the drawer
+  ///
+  /// In en, this message translates to:
+  /// **'Quick Tour'**
+  String get drawerRelaunchOnboardingText;
+
+  /// Text for the Next button
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get buttonNext;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

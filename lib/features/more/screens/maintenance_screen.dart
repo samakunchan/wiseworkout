@@ -18,6 +18,7 @@ class MaintenanceScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenScaffold(
       title: context.localizations.titleMaintenanceScreen,
+      feedbackLabels: const ['drawer', 'maintenance'],
       child: Padding(
         padding: const EdgeInsets.all(kDefaultSpacing),
         child: ListView(

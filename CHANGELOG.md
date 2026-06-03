@@ -1,5 +1,22 @@
 # CHANGELOG wiseworkout
 
+## 🚀 0.11.0 - 03/06/2026
+
+### Added
+- Created a premium onboarding screen (`OnboardingScreen`) with a 3-page interactive slideshow, indicators, and skip/navigation buttons.
+- Integrated a "Quick Tour" relaunch button in the drawer menu (`WorkoutDrawer`).
+- Implemented state tracking for onboarding completion (`OnboardingStore`), caching the value using `CacheService`.
+- Added new multi-language translations for onboarding and drawer relaunch options to English, French, German, Spanish, and Chinese localization files.
+- Added `FeedBackStore` and registered it to track page changes in the main screen `PageView`.
+- Wrapped `WorkoutAppBar` feedback buttons in `SignalBuilder` to dynamically output page-specific feedback labels (`['mainscreen', 'timer']` or `['mainscreen', 'history']`).
+
+### Changed
+- Enforced English-only feedback tags on screens that utilize `ScreenScaffold` (`monthly_summary`, `about_us`, `maintenance`) by requiring a static English `feedbackLabel` parameter.
+- Commented out unused GitHub-related fields/variables in `FeedbackButton` to fix `flutter analyze` warnings.
+
+### Fixed
+- Fixed unused local variable compiler warnings.
+
 ## 🚀 0.10.0 - 02/06/2026
 
 ### Added

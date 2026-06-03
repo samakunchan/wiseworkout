@@ -99,5 +99,14 @@
   "maintenanceToastHistoryDeleted": "Verlaufsdaten gelöscht",
   "feedbackImprovementTitle": "Helfen Sie uns, uns zu verbessern!",
   "feedbackHintText": "Erzählen Sie uns mehr...",
-  "feedbackSendButton": "Senden"
+  "feedbackSendButton": "Senden",
+  "onboardingSlide2Title": "Passen Sie Ihr Tempo an",
+  "onboardingSlide2Subtitle1": "Stellen Sie Ihre Arbeits- und Ruhezeiten sowie die Anzahl der Sätze ein.",
+  "onboardingSlide2Subtitle2": "Schalten Sie Tonsignale ein und wählen Sie das Layout Ihres Timers.",
+  "onboardingSlide3Title": "Verfolgen Sie Ihre Fortschritte",
+  "onboardingSlide3Subtitle1": "Überprüfen Sie Ihre Trainingseinheiten und überwachen Sie die Monatsstatistiken.",
+  "onboardingSlide3Subtitle2": "Analysieren Sie Ihre produktivsten Tage und steigern Sie Ihre Konstanz.",
+  "buttonSkip": "Überspringen",
+  "drawerRelaunchOnboardingText": "Schnelle Tour",
+  "buttonNext": "Weiter"
 }

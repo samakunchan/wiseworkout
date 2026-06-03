@@ -10,6 +10,7 @@ import 'package:wiseworkout/features/di/services/service_locator.dart';
 import 'package:wiseworkout/features/history/screens/monthly_summary_screen.dart';
 import 'package:wiseworkout/features/more/screens/about_us_screen.dart';
 import 'package:wiseworkout/features/more/screens/maintenance_screen.dart';
+import 'package:wiseworkout/features/onboarding/screens/onboarding_screen.dart';
 import 'package:wiseworkout/features/settings/enums/enums.dart';
 import 'package:wiseworkout/features/settings/signals/locale_store.dart';
 import 'package:wiseworkout/features/settings/signals/theme_mode_store.dart';
@@ -198,6 +199,21 @@ class WorkoutDrawer extends StatelessWidget {
           /// Support Section
           const Divider(height: 1),
           _buildSectionHeader(context, context.localizations.drawerHeaderSupport),
+
+          /// Quick Tour
+          ListTile(
+            leading: Icon(Icons.explore, color: Theme.of(context).colorScheme.primary),
+            title: Text(context.localizations.drawerRelaunchOnboardingText),
+            onTap: () async {
+              Navigator.pop(context); // Close drawer
+              await Navigator.push(
+                context,
+                MaterialPageRoute<void>(
+                  builder: (_) => const OnboardingScreen(isRelaunched: true),
+                ),
+              );
+            },
+          ),
 
           /// About us
           ListTile(

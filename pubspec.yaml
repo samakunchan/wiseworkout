@@ -1,7 +1,7 @@
 name: wiseworkout
 description: "A new Flutter project for personal workout."
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-version: 0.10.0+1
+version: 0.11.0+1
 
 environment:
   sdk: ^3.10.1
@@ -87,6 +87,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  shared_preferences_platform_interface: ^2.4.2
 
   # Builder
   build_runner: ^2.5.4

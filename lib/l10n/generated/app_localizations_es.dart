@@ -362,4 +362,31 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get feedbackSendButton => 'Enviar';
+
+  @override
+  String get onboardingSlide2Title => 'Adapte su ritmo';
+
+  @override
+  String get onboardingSlide2Subtitle1 => 'Configure sus intervalos de trabajo, descanso y número de series.';
+
+  @override
+  String get onboardingSlide2Subtitle2 => 'Active las señales sonoras y elija el estilo de su temporizador.';
+
+  @override
+  String get onboardingSlide3Title => 'Siga sus progresos';
+
+  @override
+  String get onboardingSlide3Subtitle1 => 'Revise sus sesiones completadas y controle las estadísticas mensuales.';
+
+  @override
+  String get onboardingSlide3Subtitle2 => 'Analice sus días más productivos y mantenga su racha de constancia.';
+
+  @override
+  String get buttonSkip => 'Omitir';
+
+  @override
+  String get drawerRelaunchOnboardingText => 'Visita guiada';
+
+  @override
+  String get buttonNext => 'Siguiente';
 }

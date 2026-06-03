@@ -362,4 +362,31 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get feedbackSendButton => 'Envoyer';
+
+  @override
+  String get onboardingSlide2Title => 'Rythmez votre séance';
+
+  @override
+  String get onboardingSlide2Subtitle1 => 'Configurez vos temps d\'effort, de repos et le nombre de séries.';
+
+  @override
+  String get onboardingSlide2Subtitle2 => 'Activez les alertes sonores et choisissez le style de votre chronomètre.';
+
+  @override
+  String get onboardingSlide3Title => 'Suivez vos progrès';
+
+  @override
+  String get onboardingSlide3Subtitle1 => 'Consultez l\'historique de vos séances et suivez vos statistiques mensuelles.';
+
+  @override
+  String get onboardingSlide3Subtitle2 => 'Analysez vos jours les plus productifs et maintenez votre régularité.';
+
+  @override
+  String get buttonSkip => 'Passer';
+
+  @override
+  String get drawerRelaunchOnboardingText => 'Visite guidée';
+
+  @override
+  String get buttonNext => 'Suivant';
 }

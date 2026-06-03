@@ -4,6 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 const String timerConfigurationKey = 'timer_configuration';
 const String themeModeKey = 'theme_mode';
 const String localKey = 'localization';
+const String onboardingCompletedKey = 'onboarding_completed';
 
 class CacheService {
   CacheService()
@@ -13,6 +14,7 @@ class CacheService {
             timerConfigurationKey,
             themeModeKey,
             localKey,
+            onboardingCompletedKey,
           },
         ),
       ) {
